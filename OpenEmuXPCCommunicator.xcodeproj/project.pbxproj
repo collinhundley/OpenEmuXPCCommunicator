@@ -105,7 +105,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9E1270AD225BD4130054FD47 /* OpenEmuXPCCommunicator.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = OpenEmuXPCCommunicator.podspec; sourceTree = "<group>"; };
+		9E1270AD225BD4130054FD47 /* OpenEmuXPCCommunicator.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = OpenEmuXPCCommunicator.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E1270CF225C07CD0054FD47 /* OpenEmuXPCCommunicatorAgent */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = OpenEmuXPCCommunicatorAgent; sourceTree = "<group>"; };
 		C643AC5117935A9A00456656 /* OpenEmuXPCCommunicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenEmuXPCCommunicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C643AC5417935A9B00456656 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C643AC5717935A9B00456656 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -186,10 +187,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E1270CE225C077A0054FD47 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				9E1270CF225C07CD0054FD47 /* OpenEmuXPCCommunicatorAgent */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
 		C643AC4717935A9A00456656 = {
 			isa = PBXGroup;
 			children = (
 				9E1270AD225BD4130054FD47 /* OpenEmuXPCCommunicator.podspec */,
+				9E1270CE225C077A0054FD47 /* bin */,
 				C643AC5A17935A9B00456656 /* OpenEmuXPCCommunicator */,
 				C643AC7017935C1200456656 /* OpenEmuXPCCommunicatorAgent */,
 				C643AC95179392C000456656 /* OEXPCCTestApplication */,
