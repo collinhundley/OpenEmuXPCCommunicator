@@ -32,7 +32,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [OEXPCCAgentConfiguration defaultConfiguration];
+    [OEXPCCAgentConfiguration defaultConfigurationWithName:@"ha"];
     [OEXPCCAgent defaultAgent];
 
     [[self wrapper1] setUpWithProcessIdentifier:@"Wrapper 1"];
@@ -43,7 +43,7 @@
 {
     [[self wrapper1] terminate];
     [[self wrapper2] terminate];
-    [[OEXPCCAgentConfiguration defaultConfiguration] tearDownAgent];
+    [[OEXPCCAgentConfiguration currentConfiguration] tearDownAgent];
 }
 
 @end

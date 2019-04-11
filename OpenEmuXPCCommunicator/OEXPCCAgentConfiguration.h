@@ -30,7 +30,8 @@
 // The class sets up the agent that will allow you to communicate with background processes.
 @interface OEXPCCAgentConfiguration : NSObject
 
-+ (OEXPCCAgentConfiguration *)defaultConfiguration;
++ (OEXPCCAgentConfiguration *)currentConfiguration;
++ (OEXPCCAgentConfiguration *)defaultConfigurationWithName:(NSString *)name;
 - (void)tearDownAgent;
 
 // Directory containing the agent binaries (Application Support).

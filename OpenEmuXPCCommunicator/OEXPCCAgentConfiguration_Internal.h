@@ -31,5 +31,5 @@ extern NSString *const _OEXPCCAgentProcessIdentifierArgumentPrefix;
 extern NSString *const _OEXPCCAgentServiceNamePrefix;
 
 @interface OEXPCCAgentConfiguration ()
-+ (OEXPCCAgentConfiguration *)OEXPCC_defaultConfigurationCreateIfNeeded:(BOOL)createIfNeeded;
++ (OEXPCCAgentConfiguration *)OEXPCC_defaultConfigurationCreateIfNeeded:(BOOL)createIfNeeded withName:(NSString *)name;
 @end

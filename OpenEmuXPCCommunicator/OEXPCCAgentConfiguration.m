@@ -27,9 +27,9 @@
 #import "OEXPCCAgentConfiguration.h"
 #import "OEXPCCAgentConfiguration_Internal.h"
 
-NSString *const _OEXPCCAgentServiceNameArgumentPrefix = @"--org.openemu.OEXPCCAgent.ServiceName=";
-NSString *const _OEXPCCAgentProcessIdentifierArgumentPrefix = @"--org.openemu.OEXPCCAgent.ProcessIdentifier=";
-NSString *const _OEXPCCAgentServiceNamePrefix = @"org.openemu.OEXPCCAgent.";
+NSString *const _OEXPCCAgentServiceNameArgumentPrefix = @"--ai.m37.GoRewind.OEXPCCAgent.ServiceName=";
+NSString *const _OEXPCCAgentProcessIdentifierArgumentPrefix = @"--ai.m37.GoRewind.OEXPCCAgent.ProcessIdentifier=";
+NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
 
 @implementation OEXPCCAgentConfiguration
 {
@@ -38,12 +38,21 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"org.openemu.OEXPCCAgent.";
     NSString *_agentProcessPath;
 }
 
-+ (OEXPCCAgentConfiguration *)defaultConfiguration
++ (OEXPCCAgentConfiguration *)defaultConfigurationWithName:(NSString *)name
 {
-    return [self OEXPCC_defaultConfigurationCreateIfNeeded:YES];
+    if (name == nil) {
+        name = [[NSUUID UUID] UUIDString];
+    }
+    
+    return [self OEXPCC_defaultConfigurationCreateIfNeeded:YES withName:name];
 }
 
-+ (OEXPCCAgentConfiguration *)OEXPCC_defaultConfigurationCreateIfNeeded:(BOOL)createIfNeeded
++ (OEXPCCAgentConfiguration *)currentConfiguration
+{
+    return [self OEXPCC_defaultConfigurationCreateIfNeeded:NO withName:nil];
+}
+
++ (OEXPCCAgentConfiguration *)OEXPCC_defaultConfigurationCreateIfNeeded:(BOOL)createIfNeeded withName:(NSString *)name
 {
     static OEXPCCAgentConfiguration *sharedInstance = nil;
 
@@ -51,18 +60,18 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"org.openemu.OEXPCCAgent.";
     {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            sharedInstance = [[OEXPCCAgentConfiguration alloc] init];
+            sharedInstance = [[OEXPCCAgentConfiguration alloc] initWithName:name];
         });
     }
 
     return sharedInstance;
 }
 
-- (id)init
+- (instancetype)initWithName:(NSString *)name
 {
     if((self = [super init]))
     {
-        _serviceName = [@[ _OEXPCCAgentServiceNamePrefix, [[NSUUID UUID] UUIDString] ] componentsJoinedByString:@""];
+        _serviceName = [@[ _OEXPCCAgentServiceNamePrefix, name ] componentsJoinedByString:@""];
         _serviceNameArgument = [@[ _OEXPCCAgentServiceNameArgumentPrefix, _serviceName ] componentsJoinedByString:@""];
 
         _agentProcessPath = [[[self class] OEXPCC_agentsApplicationSupportFolderPath] stringByAppendingPathComponent:_serviceName];
@@ -143,7 +152,7 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"org.openemu.OEXPCCAgent.";
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
         if([paths count] == 0) @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Could not find Application Support directory." userInfo:nil];
 
-        agentsApplicationSupportFolderPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"org.openemu.OEXPCCAgent.Agents"];
+        agentsApplicationSupportFolderPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"ai.m37.GoRewind.OEXPCCAgent.Agents"];
 
         [[NSFileManager defaultManager] createDirectoryAtPath:agentsApplicationSupportFolderPath withIntermediateDirectories:YES attributes:nil error:NULL];
     });

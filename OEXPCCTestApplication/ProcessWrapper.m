@@ -41,7 +41,7 @@
 
     _identifier = [identifier copy];
 
-    OEXPCCAgentConfiguration *configuration = [OEXPCCAgentConfiguration defaultConfiguration];
+    OEXPCCAgentConfiguration *configuration = [OEXPCCAgentConfiguration defaultConfigurationWithName:@"testProcess"];
 
     _processTask = [[NSTask alloc] init];
     [_processTask setLaunchPath:[[NSBundle mainBundle] pathForResource:@"OEXPCBackgroundProcessTest" ofType:nil]];
