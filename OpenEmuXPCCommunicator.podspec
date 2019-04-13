@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "OpenEmuXPCCommunicator"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "A short description of OpenEmuXPCCommunicator."
   spec.description  = <<-DESC
   OpenEmuXPCCommunicator. That's it.
@@ -16,9 +16,9 @@ Pod::Spec.new do |spec|
   spec.homepage     = "http://EXAMPLE/OpenEmuXPCCommunicator"
   spec.license      = "MIT"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author             = { "Konstantin Gonikman" => "info@alstertouch.de" }
+  spec.author             = { "Konstantin Gonikman" => "konstantin.gonikman@move37.com" }
   spec.platform     = :osx, '10.13'
   spec.source       = { :git => "https://github.com/move37-com/OpenEmuXPCCommunicator", :tag => "#{spec.version}" }
-  spec.source_files  = "OpenEmuXPCCommunicator/**/*.{h,m}", "OpenEmuXPCCommunicatorAgent/OEXPCCMatchMaking.h"
+  spec.source_files  = "OpenEmuXPCCommunicator/**/*.{h,m,swift}", "OpenEmuXPCCommunicatorAgent/OEXPCCMatchMaking.h"
   spec.resource = 'bin/OpenEmuXPCCommunicatorAgent'
 end
