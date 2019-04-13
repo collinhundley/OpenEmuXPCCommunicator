@@ -121,6 +121,7 @@
 		9E9F002A22627FFA003871FE /* GoRewindRunningProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoRewindRunningProcess.swift; sourceTree = "<group>"; };
 		9E9F002B22627FFB003871FE /* GoRewindPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoRewindPeer.swift; sourceTree = "<group>"; };
 		9E9F002C22627FFB003871FE /* GoRewindProcessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoRewindProcessProtocol.swift; sourceTree = "<group>"; };
+		9E9F003322628EB8003871FE /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		C643AC5117935A9A00456656 /* OpenEmuXPCCommunicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenEmuXPCCommunicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C643AC5417935A9B00456656 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C643AC5717935A9B00456656 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -226,6 +227,7 @@
 		C643AC4717935A9A00456656 = {
 			isa = PBXGroup;
 			children = (
+				9E9F003322628EB8003871FE /* Package.swift */,
 				9E1270AD225BD4130054FD47 /* OpenEmuXPCCommunicator.podspec */,
 				9E1270CE225C077A0054FD47 /* bin */,
 				C643AC5A17935A9B00456656 /* OpenEmuXPCCommunicator */,
