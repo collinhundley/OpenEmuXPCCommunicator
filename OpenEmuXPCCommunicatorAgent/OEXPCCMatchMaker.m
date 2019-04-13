@@ -93,9 +93,10 @@
         
         void (^clientBlock)(NSXPCListenerEndpoint *) = _pendingClients[identifier];
 
+        _pendingListeners[identifier] = [OEXPCCMatchMakerListener matchMakerListenerWithEndpoint:endpoint handler:handler];
+
         if(clientBlock == nil)
         {
-            _pendingListeners[identifier] = [OEXPCCMatchMakerListener matchMakerListenerWithEndpoint:endpoint handler:handler];
             return;
         }
 
@@ -112,10 +113,10 @@
         os_log(OS_LOG_DEFAULT, "_pendingListeners: %{public}@", [_pendingListeners allKeys]);
         
         OEXPCCMatchMakerListener *listener = _pendingListeners[identifier];
+        _pendingClients[identifier] = [handler copy];
 
         if(listener == nil)
         {
-            _pendingClients[identifier] = [handler copy];
             return;
         }
 

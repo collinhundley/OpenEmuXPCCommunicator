@@ -84,8 +84,6 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
 
 - (void)OEXPCC_setUpAgent
 {
-    [self tearDownAgent];
-    
     [[self OEXPCC_propertyListForAgent] writeToFile:_agentPlistPath atomically:YES];
     [[NSFileManager defaultManager] copyItemAtPath:[self OEXPCC_originalAgentProgramPath] toPath:_agentProcessPath error:NULL];
 
