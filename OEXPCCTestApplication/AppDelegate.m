@@ -33,10 +33,14 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [OEXPCCAgentConfiguration defaultConfigurationWithName:@"ha"];
-    [OEXPCCAgent defaultAgent];
+    [OEXPCCAgent defaultAgentWithServiceName:@"ai.m37.GoRewind.OEXPCCAgent.ha"];
 
     [[self wrapper1] setUpWithProcessIdentifier:@"Wrapper 1"];
-    [[self wrapper2] setUpWithProcessIdentifier:@"Wrapper 2"];
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSLog(@"calling second");
+//        [[self wrapper2] setUpWithProcessIdentifier:@"Wrapper 2"];
+//    });
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification

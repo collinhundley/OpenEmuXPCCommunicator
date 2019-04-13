@@ -58,7 +58,7 @@ int main(int argc, const char * argv[])
     [_listener resume];
 
     NSXPCListenerEndpoint *endpoint = [_listener endpoint];
-    [[OEXPCCAgent defaultAgent] registerListenerEndpoint:endpoint forIdentifier:[OEXPCCAgent defaultProcessIdentifier] completionHandler:^(BOOL success){ }];
+    [[OEXPCCAgent defaultAgentWithServiceName:@"ai.m37.GoRewind.OEXPCCAgent.ha"] registerListenerEndpoint:endpoint forIdentifier:[OEXPCCAgent defaultProcessIdentifier] completionHandler:^(BOOL success){ }];
 }
 
 - (BOOL)listener:(NSXPCListener *)listener shouldAcceptNewConnection:(NSXPCConnection *)newConnection

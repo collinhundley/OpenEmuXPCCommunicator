@@ -48,16 +48,18 @@
     [_processTask setArguments:@[ [configuration agentServiceNameProcessArgument], [configuration processIdentifierArgumentForIdentifier:_identifier] ]];
 
     [_processTask launch];
-
-    [[OEXPCCAgent defaultAgent] retrieveListenerEndpointForIdentifier:_identifier completionHandler:
-     ^(NSXPCListenerEndpoint *endpoint)
-     {
-         _processConnection = [[NSXPCConnection alloc] initWithListenerEndpoint:endpoint];
-         [_processConnection setRemoteObjectInterface:[NSXPCInterface interfaceWithProtocol:@protocol(OEXPCCTestBackgroundService)]];
-         [_processConnection resume];
-
-         _remoteObjectProxy = [_processConnection remoteObjectProxy];
-     }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[OEXPCCAgent defaultAgentWithServiceName:@"ai.m37.GoRewind.OEXPCCAgent.ha"] retrieveListenerEndpointForIdentifier:_identifier completionHandler:
+         ^(NSXPCListenerEndpoint *endpoint)
+         {
+             _processConnection = [[NSXPCConnection alloc] initWithListenerEndpoint:endpoint];
+             [_processConnection setRemoteObjectInterface:[NSXPCInterface interfaceWithProtocol:@protocol(OEXPCCTestBackgroundService)]];
+             [_processConnection resume];
+             
+             _remoteObjectProxy = [_processConnection remoteObjectProxy];
+         }];
+    });
 }
 
 - (IBAction)transformOrigin:(id)sender

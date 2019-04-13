@@ -31,7 +31,7 @@
 @interface OEXPCCAgentConfiguration : NSObject
 
 + (OEXPCCAgentConfiguration *)currentConfiguration;
-+ (OEXPCCAgentConfiguration *)defaultConfigurationWithName:(NSString *)name;
++ (OEXPCCAgentConfiguration *)defaultConfigurationWithName:(nullable NSString *)name;
 - (void)tearDownAgent;
 
 // Directory containing the agent binaries (Application Support).

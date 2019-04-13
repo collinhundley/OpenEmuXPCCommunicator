@@ -25,6 +25,7 @@
  */
 
 #import "OEXPCCMatchMaker.h"
+#import <os/log.h>
 
 @interface OEXPCCMatchMakerListener : NSObject
 + (instancetype)matchMakerListenerWithEndpoint:(NSXPCListenerEndpoint *)endpoint handler:(void(^)(BOOL success))handler;
@@ -87,6 +88,9 @@
 - (void)registerListenerEndpoint:(NSXPCListenerEndpoint *)endpoint forIdentifier:(NSString *)identifier completionHandler:(void (^)(BOOL))handler
 {
     dispatch_async(_listenerQueue, ^{
+        os_log(OS_LOG_DEFAULT, "Registering endpoint with identifier: %{public}@...", identifier);
+        os_log(OS_LOG_DEFAULT, "_pendingClients: %{public}@", [_pendingClients allKeys]);
+        
         void (^clientBlock)(NSXPCListenerEndpoint *) = _pendingClients[identifier];
 
         if(clientBlock == nil)
@@ -97,13 +101,16 @@
 
         clientBlock(endpoint);
         handler(YES);
-        [_pendingClients removeObjectForKey:identifier];
+//        [_pendingClients removeObjectForKey:identifier];
     });
 }
 
 - (void)retrieveListenerEndpointForIdentifier:(NSString *)identifier completionHandler:(void (^)(NSXPCListenerEndpoint *))handler
 {
     dispatch_async(_listenerQueue, ^{
+        os_log(OS_LOG_DEFAULT, "Retrieving endpoint for identifier: %{public}@...", identifier);
+        os_log(OS_LOG_DEFAULT, "_pendingListeners: %{public}@", [_pendingListeners allKeys]);
+        
         OEXPCCMatchMakerListener *listener = _pendingListeners[identifier];
 
         if(listener == nil)
@@ -115,7 +122,7 @@
         handler([listener endpoint]);
 
         [listener handler](YES);
-        [_pendingListeners removeObjectForKey:identifier];
+//        [_pendingListeners removeObjectForKey:identifier];
     });
 }
 

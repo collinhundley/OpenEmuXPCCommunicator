@@ -53,12 +53,16 @@
     return [self OEXPCC_serviceNameFromArguments] != nil && [self defaultProcessIdentifier] != nil;
 }
 
-+ (OEXPCCAgent *)defaultAgent;
++ (OEXPCCAgent *)defaultAgentWithServiceName:(nullable NSString *)name
 {
     static OEXPCCAgent *defaultAgent = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        defaultAgent = [[OEXPCCAgent alloc] initWithServiceName:[self OEXPCC_serviceNameFromArguments] ? : [self OEXPCC_serviceNameFromDefaultConfiguration]];
+        NSString *serviceName = name;
+        if(serviceName == nil) {
+            serviceName = [self OEXPCC_serviceNameFromArguments] ? : [self OEXPCC_serviceNameFromDefaultConfiguration];
+        }
+        defaultAgent = [[OEXPCCAgent alloc] initWithServiceName:serviceName];
     });
 
     return defaultAgent;
