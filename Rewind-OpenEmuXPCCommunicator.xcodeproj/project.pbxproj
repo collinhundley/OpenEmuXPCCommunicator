@@ -1,0 +1,984 @@
+// !$*UTF8*$!
+{
+   archiveVersion = "1";
+   objectVersion = "46";
+   objects = {
+      "OBJ_1" = {
+         isa = "PBXProject";
+         attributes = {
+            LastUpgradeCheck = "9999";
+         };
+         buildConfigurationList = "OBJ_2";
+         compatibilityVersion = "Xcode 3.2";
+         developmentRegion = "English";
+         hasScannedForEncodings = "0";
+         knownRegions = (
+            "en"
+         );
+         mainGroup = "OBJ_5";
+         productRefGroup = "OBJ_36";
+         projectDirPath = ".";
+         targets = (
+            "Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator",
+            "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent",
+            "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorCore",
+            "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared",
+            "Rewind-OpenEmuXPCCommunicator::SwiftPMPackageDescription"
+         );
+      };
+      "OBJ_10" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_11",
+            "OBJ_12"
+         );
+         name = "OpenEmuXPCCommunicatorShared";
+         path = "Sources/OpenEmuXPCCommunicatorShared";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_11" = {
+         isa = "PBXFileReference";
+         path = "dummy.m";
+         sourceTree = "<group>";
+      };
+      "OBJ_12" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_13",
+            "OBJ_14"
+         );
+         name = "include";
+         path = "include";
+         sourceTree = "<group>";
+      };
+      "OBJ_13" = {
+         isa = "PBXFileReference";
+         path = "OEXPCCMatchMaking.h";
+         sourceTree = "<group>";
+      };
+      "OBJ_14" = {
+         isa = "PBXFileReference";
+         name = "module.modulemap";
+         path = "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorShared/module.modulemap";
+         sourceTree = "<group>";
+      };
+      "OBJ_15" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_16",
+            "OBJ_17"
+         );
+         name = "OpenEmuXPCCommunicatorAgent";
+         path = "Sources/OpenEmuXPCCommunicatorAgent";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_16" = {
+         isa = "PBXFileReference";
+         path = "OEXPCCMatchMaker.m";
+         sourceTree = "<group>";
+      };
+      "OBJ_17" = {
+         isa = "PBXFileReference";
+         path = "main.m";
+         sourceTree = "<group>";
+      };
+      "OBJ_18" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_19",
+            "OBJ_20",
+            "OBJ_21",
+            "OBJ_22",
+            "OBJ_23",
+            "OBJ_24",
+            "OBJ_25"
+         );
+         name = "GoRewindProcessCommunicator";
+         path = "Sources/GoRewindProcessCommunicator";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_19" = {
+         isa = "PBXFileReference";
+         path = "GoRewindPeer.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_2" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_3",
+            "OBJ_4"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_20" = {
+         isa = "PBXFileReference";
+         path = "GoRewindProcess.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_21" = {
+         isa = "PBXFileReference";
+         path = "GoRewindProcessCommunicator.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_22" = {
+         isa = "PBXFileReference";
+         path = "GoRewindProcessConstants.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_23" = {
+         isa = "PBXFileReference";
+         path = "GoRewindProcessProtocol.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_24" = {
+         isa = "PBXFileReference";
+         path = "GoRewindRunningProcess.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_25" = {
+         isa = "PBXFileReference";
+         path = "Process+Extensions.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_26" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_27",
+            "OBJ_28",
+            "OBJ_29"
+         );
+         name = "OpenEmuXPCCommunicatorCore";
+         path = "Sources/OpenEmuXPCCommunicatorCore";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_27" = {
+         isa = "PBXFileReference";
+         path = "OEXPCCAgent.m";
+         sourceTree = "<group>";
+      };
+      "OBJ_28" = {
+         isa = "PBXFileReference";
+         path = "OEXPCCAgentConfiguration.m";
+         sourceTree = "<group>";
+      };
+      "OBJ_29" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_30",
+            "OBJ_31",
+            "OBJ_32",
+            "OBJ_33",
+            "OBJ_34"
+         );
+         name = "include";
+         path = "include";
+         sourceTree = "<group>";
+      };
+      "OBJ_3" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_OBJC_ARC = "YES";
+            COMBINE_HIDPI_IMAGES = "YES";
+            COPY_PHASE_STRIP = "NO";
+            DEBUG_INFORMATION_FORMAT = "dwarf";
+            DYLIB_INSTALL_NAME_BASE = "@rpath";
+            ENABLE_NS_ASSERTIONS = "YES";
+            GCC_OPTIMIZATION_LEVEL = "0";
+            GCC_PREPROCESSOR_DEFINITIONS = (
+               "DEBUG=1",
+               "$(inherited)"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            ONLY_ACTIVE_ARCH = "YES";
+            OTHER_SWIFT_FLAGS = (
+               "-DXcode"
+            );
+            PRODUCT_NAME = "$(TARGET_NAME)";
+            SDKROOT = "macosx";
+            SUPPORTED_PLATFORMS = (
+               "macosx",
+               "iphoneos",
+               "iphonesimulator",
+               "appletvos",
+               "appletvsimulator",
+               "watchos",
+               "watchsimulator"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "SWIFT_PACKAGE",
+               "DEBUG"
+            );
+            SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            USE_HEADERMAP = "NO";
+         };
+         name = "Debug";
+      };
+      "OBJ_30" = {
+         isa = "PBXFileReference";
+         path = "OEXPCCAgentConfiguration.h";
+         sourceTree = "<group>";
+      };
+      "OBJ_31" = {
+         isa = "PBXFileReference";
+         path = "OEXPCCAgent.h";
+         sourceTree = "<group>";
+      };
+      "OBJ_32" = {
+         isa = "PBXFileReference";
+         path = "OEXPCCAgentConfiguration_Internal.h";
+         sourceTree = "<group>";
+      };
+      "OBJ_33" = {
+         isa = "PBXFileReference";
+         path = "OpenEmuXPCCommunicator.h";
+         sourceTree = "<group>";
+      };
+      "OBJ_34" = {
+         isa = "PBXFileReference";
+         name = "module.modulemap";
+         path = "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorCore/module.modulemap";
+         sourceTree = "<group>";
+      };
+      "OBJ_35" = {
+         isa = "PBXGroup";
+         children = (
+         );
+         name = "Tests";
+         path = "";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_36" = {
+         isa = "PBXGroup";
+         children = (
+            "Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator::Product",
+            "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorCore::Product",
+            "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent::Product",
+            "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product"
+         );
+         name = "Products";
+         path = "";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "OBJ_4" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_OBJC_ARC = "YES";
+            COMBINE_HIDPI_IMAGES = "YES";
+            COPY_PHASE_STRIP = "YES";
+            DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+            DYLIB_INSTALL_NAME_BASE = "@rpath";
+            GCC_OPTIMIZATION_LEVEL = "s";
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            OTHER_SWIFT_FLAGS = (
+               "-DXcode"
+            );
+            PRODUCT_NAME = "$(TARGET_NAME)";
+            SDKROOT = "macosx";
+            SUPPORTED_PLATFORMS = (
+               "macosx",
+               "iphoneos",
+               "iphonesimulator",
+               "appletvos",
+               "appletvsimulator",
+               "watchos",
+               "watchsimulator"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "SWIFT_PACKAGE"
+            );
+            SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+            USE_HEADERMAP = "NO";
+         };
+         name = "Release";
+      };
+      "OBJ_42" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_43",
+            "OBJ_44"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_43" = {
+         isa = "XCBuildConfiguration";
+         baseConfigurationReference = "OBJ_8";
+         buildSettings = {
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorCore/include",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorShared/include",
+               "$(SRCROOT)/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorCore",
+               "$(SRCROOT)/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorShared"
+            );
+            INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/GoRewindProcessCommunicator_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+               "-Xcc",
+               "-fmodule-map-file=$(SRCROOT)/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorCore/module.modulemap",
+               "-Xcc",
+               "-fmodule-map-file=$(SRCROOT)/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorShared/module.modulemap"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "GoRewindProcessCommunicator";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
+            TARGET_NAME = "GoRewindProcessCommunicator";
+         };
+         name = "Debug";
+      };
+      "OBJ_44" = {
+         isa = "XCBuildConfiguration";
+         baseConfigurationReference = "OBJ_8";
+         buildSettings = {
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorCore/include",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorShared/include",
+               "$(SRCROOT)/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorCore",
+               "$(SRCROOT)/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorShared"
+            );
+            INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/GoRewindProcessCommunicator_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+               "-Xcc",
+               "-fmodule-map-file=$(SRCROOT)/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorCore/module.modulemap",
+               "-Xcc",
+               "-fmodule-map-file=$(SRCROOT)/Rewind-OpenEmuXPCCommunicator.xcodeproj/GeneratedModuleMap/OpenEmuXPCCommunicatorShared/module.modulemap"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "GoRewindProcessCommunicator";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
+            TARGET_NAME = "GoRewindProcessCommunicator";
+         };
+         name = "Release";
+      };
+      "OBJ_45" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_46",
+            "OBJ_47",
+            "OBJ_48",
+            "OBJ_49",
+            "OBJ_50",
+            "OBJ_51",
+            "OBJ_52"
+         );
+      };
+      "OBJ_46" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_19";
+      };
+      "OBJ_47" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_20";
+      };
+      "OBJ_48" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_21";
+      };
+      "OBJ_49" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_22";
+      };
+      "OBJ_5" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_6",
+            "OBJ_7",
+            "OBJ_9",
+            "OBJ_35",
+            "OBJ_36"
+         );
+         path = "";
+         sourceTree = "<group>";
+      };
+      "OBJ_50" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_23";
+      };
+      "OBJ_51" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_24";
+      };
+      "OBJ_52" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_25";
+      };
+      "OBJ_53" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+            "OBJ_54",
+            "OBJ_55"
+         );
+      };
+      "OBJ_54" = {
+         isa = "PBXBuildFile";
+         fileRef = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorCore::Product";
+      };
+      "OBJ_55" = {
+         isa = "PBXBuildFile";
+         fileRef = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product";
+      };
+      "OBJ_56" = {
+         isa = "PBXTargetDependency";
+         target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorCore";
+      };
+      "OBJ_58" = {
+         isa = "PBXTargetDependency";
+         target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared";
+      };
+      "OBJ_6" = {
+         isa = "PBXFileReference";
+         explicitFileType = "sourcecode.swift";
+         path = "Package.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_61" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_62",
+            "OBJ_63"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_62" = {
+         isa = "XCBuildConfiguration";
+         baseConfigurationReference = "OBJ_8";
+         buildSettings = {
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorAgent/include",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorShared/include"
+            );
+            INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/OpenEmuXPCCommunicatorAgent_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+               "@executable_path"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
+            SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
+            TARGET_NAME = "OpenEmuXPCCommunicatorAgent";
+         };
+         name = "Debug";
+      };
+      "OBJ_63" = {
+         isa = "XCBuildConfiguration";
+         baseConfigurationReference = "OBJ_8";
+         buildSettings = {
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorAgent/include",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorShared/include"
+            );
+            INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/OpenEmuXPCCommunicatorAgent_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+               "@executable_path"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
+            SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
+            TARGET_NAME = "OpenEmuXPCCommunicatorAgent";
+         };
+         name = "Release";
+      };
+      "OBJ_64" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_65",
+            "OBJ_66"
+         );
+      };
+      "OBJ_65" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_16";
+      };
+      "OBJ_66" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_17";
+      };
+      "OBJ_67" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+            "OBJ_68"
+         );
+      };
+      "OBJ_68" = {
+         isa = "PBXBuildFile";
+         fileRef = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product";
+      };
+      "OBJ_69" = {
+         isa = "PBXTargetDependency";
+         target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared";
+      };
+      "OBJ_7" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_8"
+         );
+         name = "Configs";
+         path = "";
+         sourceTree = "<group>";
+      };
+      "OBJ_70" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_71",
+            "OBJ_72"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_71" = {
+         isa = "XCBuildConfiguration";
+         baseConfigurationReference = "OBJ_8";
+         buildSettings = {
+            DEFINES_MODULE = "NO";
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorCore/include",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorShared/include"
+            );
+            INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/OpenEmuXPCCommunicatorCore_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "OpenEmuXPCCommunicatorCore";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            TARGET_NAME = "OpenEmuXPCCommunicatorCore";
+         };
+         name = "Debug";
+      };
+      "OBJ_72" = {
+         isa = "XCBuildConfiguration";
+         baseConfigurationReference = "OBJ_8";
+         buildSettings = {
+            DEFINES_MODULE = "NO";
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorCore/include",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorShared/include"
+            );
+            INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/OpenEmuXPCCommunicatorCore_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "OpenEmuXPCCommunicatorCore";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            TARGET_NAME = "OpenEmuXPCCommunicatorCore";
+         };
+         name = "Release";
+      };
+      "OBJ_73" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_74",
+            "OBJ_75"
+         );
+      };
+      "OBJ_74" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_27";
+      };
+      "OBJ_75" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_28";
+      };
+      "OBJ_76" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+            "OBJ_77"
+         );
+      };
+      "OBJ_77" = {
+         isa = "PBXBuildFile";
+         fileRef = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product";
+      };
+      "OBJ_78" = {
+         isa = "PBXTargetDependency";
+         target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared";
+      };
+      "OBJ_79" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_80",
+            "OBJ_81"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_8" = {
+         isa = "PBXFileReference";
+         path = "Config.xcconfig";
+         sourceTree = "<group>";
+      };
+      "OBJ_80" = {
+         isa = "XCBuildConfiguration";
+         baseConfigurationReference = "OBJ_8";
+         buildSettings = {
+            DEFINES_MODULE = "NO";
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorShared/include"
+            );
+            INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/OpenEmuXPCCommunicatorShared_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "OpenEmuXPCCommunicatorShared";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            TARGET_NAME = "OpenEmuXPCCommunicatorShared";
+         };
+         name = "Debug";
+      };
+      "OBJ_81" = {
+         isa = "XCBuildConfiguration";
+         baseConfigurationReference = "OBJ_8";
+         buildSettings = {
+            DEFINES_MODULE = "NO";
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(SRCROOT)/Sources/OpenEmuXPCCommunicatorShared/include"
+            );
+            INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/OpenEmuXPCCommunicatorShared_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "OpenEmuXPCCommunicatorShared";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            TARGET_NAME = "OpenEmuXPCCommunicatorShared";
+         };
+         name = "Release";
+      };
+      "OBJ_82" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_83"
+         );
+      };
+      "OBJ_83" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_11";
+      };
+      "OBJ_84" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+         );
+      };
+      "OBJ_86" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_87",
+            "OBJ_88"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_87" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            LD = "/usr/bin/true";
+            OTHER_SWIFT_FLAGS = (
+               "-swift-version",
+               "4.2",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
+               "-target",
+               "x86_64-apple-macosx10.10",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+            );
+            SWIFT_VERSION = "4.2";
+         };
+         name = "Debug";
+      };
+      "OBJ_88" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            LD = "/usr/bin/true";
+            OTHER_SWIFT_FLAGS = (
+               "-swift-version",
+               "4.2",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
+               "-target",
+               "x86_64-apple-macosx10.10",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+            );
+            SWIFT_VERSION = "4.2";
+         };
+         name = "Release";
+      };
+      "OBJ_89" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_90"
+         );
+      };
+      "OBJ_9" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_10",
+            "OBJ_15",
+            "OBJ_18",
+            "OBJ_26"
+         );
+         name = "Sources";
+         path = "";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_90" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_6";
+      };
+      "Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_42";
+         buildPhases = (
+            "OBJ_45",
+            "OBJ_53"
+         );
+         dependencies = (
+            "OBJ_56",
+            "OBJ_58"
+         );
+         name = "GoRewindProcessCommunicator";
+         productName = "GoRewindProcessCommunicator";
+         productReference = "Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator::Product";
+         productType = "com.apple.product-type.framework";
+      };
+      "Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator::Product" = {
+         isa = "PBXFileReference";
+         path = "GoRewindProcessCommunicator.framework";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_61";
+         buildPhases = (
+            "OBJ_64",
+            "OBJ_67"
+         );
+         dependencies = (
+            "OBJ_69"
+         );
+         name = "OpenEmuXPCCommunicatorAgent";
+         productName = "OpenEmuXPCCommunicatorAgent";
+         productReference = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent::Product";
+         productType = "com.apple.product-type.tool";
+      };
+      "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent::Product" = {
+         isa = "PBXFileReference";
+         path = "OpenEmuXPCCommunicatorAgent";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorCore" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_70";
+         buildPhases = (
+            "OBJ_73",
+            "OBJ_76"
+         );
+         dependencies = (
+            "OBJ_78"
+         );
+         name = "OpenEmuXPCCommunicatorCore";
+         productName = "OpenEmuXPCCommunicatorCore";
+         productReference = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorCore::Product";
+         productType = "com.apple.product-type.framework";
+      };
+      "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorCore::Product" = {
+         isa = "PBXFileReference";
+         path = "OpenEmuXPCCommunicatorCore.framework";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_79";
+         buildPhases = (
+            "OBJ_82",
+            "OBJ_84"
+         );
+         dependencies = (
+         );
+         name = "OpenEmuXPCCommunicatorShared";
+         productName = "OpenEmuXPCCommunicatorShared";
+         productReference = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product";
+         productType = "com.apple.product-type.framework";
+      };
+      "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product" = {
+         isa = "PBXFileReference";
+         path = "OpenEmuXPCCommunicatorShared.framework";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "Rewind-OpenEmuXPCCommunicator::SwiftPMPackageDescription" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_86";
+         buildPhases = (
+            "OBJ_89"
+         );
+         dependencies = (
+         );
+         name = "Rewind-OpenEmuXPCCommunicatorPackageDescription";
+         productName = "Rewind-OpenEmuXPCCommunicatorPackageDescription";
+         productType = "com.apple.product-type.framework";
+      };
+   };
+   rootObject = "OBJ_1";
+}

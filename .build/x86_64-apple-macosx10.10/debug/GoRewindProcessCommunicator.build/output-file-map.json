@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/master.swiftdeps"
+  },
+  "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/GoRewindProcessCommunicator/GoRewindPeer.swift": {
+    "dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindPeer.d",
+    "object": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindPeer.swift.o",
+    "swiftmodule": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindPeer~partial.swiftmodule",
+    "swift-dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindPeer.swiftdeps"
+  },
+  "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/GoRewindProcessCommunicator/GoRewindProcess.swift": {
+    "dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcess.d",
+    "object": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcess.swift.o",
+    "swiftmodule": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcess~partial.swiftmodule",
+    "swift-dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcess.swiftdeps"
+  },
+  "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/GoRewindProcessCommunicator/GoRewindProcessCommunicator.swift": {
+    "dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessCommunicator.d",
+    "object": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessCommunicator.swift.o",
+    "swiftmodule": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessCommunicator~partial.swiftmodule",
+    "swift-dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessCommunicator.swiftdeps"
+  },
+  "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/GoRewindProcessCommunicator/GoRewindProcessConstants.swift": {
+    "dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessConstants.d",
+    "object": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessConstants.swift.o",
+    "swiftmodule": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessConstants~partial.swiftmodule",
+    "swift-dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessConstants.swiftdeps"
+  },
+  "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/GoRewindProcessCommunicator/GoRewindProcessProtocol.swift": {
+    "dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessProtocol.d",
+    "object": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessProtocol.swift.o",
+    "swiftmodule": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessProtocol~partial.swiftmodule",
+    "swift-dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindProcessProtocol.swiftdeps"
+  },
+  "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/GoRewindProcessCommunicator/GoRewindRunningProcess.swift": {
+    "dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindRunningProcess.d",
+    "object": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindRunningProcess.swift.o",
+    "swiftmodule": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindRunningProcess~partial.swiftmodule",
+    "swift-dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/GoRewindRunningProcess.swiftdeps"
+  },
+  "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/GoRewindProcessCommunicator/Process+Extensions.swift": {
+    "dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/Process+Extensions.d",
+    "object": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/Process+Extensions.swift.o",
+    "swiftmodule": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/Process+Extensions~partial.swiftmodule",
+    "swift-dependencies": "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/GoRewindProcessCommunicator.build/Process+Extensions.swiftdeps"
+  }
+}

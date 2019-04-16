@@ -1,0 +1,94 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["So6NSTaskC", ""]
+- ["So6NSTaskC", "lightCopy"]
+provides-dynamic-lookup:
+depends-top-level:
+- "AssignmentPrecedence"
+- "Process"
+depends-member:
+- !private ["s7CVarArgP", "Process"]
+- !private ["s7CVarArgP", "arguments"]
+- !private ["s7CVarArgP", "executableURL"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "terminationHandler"]
+- !private ["s28CustomDebugStringConvertibleP", "Process"]
+- !private ["s28CustomDebugStringConvertibleP", "arguments"]
+- !private ["s28CustomDebugStringConvertibleP", "executableURL"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "terminationHandler"]
+- !private ["s23CustomStringConvertibleP", "Process"]
+- !private ["s23CustomStringConvertibleP", "arguments"]
+- !private ["s23CustomStringConvertibleP", "executableURL"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "terminationHandler"]
+- !private ["SQ", "Process"]
+- !private ["SQ", "arguments"]
+- !private ["SQ", "executableURL"]
+- !private ["SQ", "init"]
+- !private ["SQ", "terminationHandler"]
+- !private ["SH", "Process"]
+- !private ["SH", "arguments"]
+- !private ["SH", "executableURL"]
+- !private ["SH", "init"]
+- !private ["SH", "terminationHandler"]
+- ["So8NSObjectC", "Process"]
+- !private ["So8NSObjectC", "arguments"]
+- !private ["So8NSObjectC", "executableURL"]
+- !private ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "lightCopy"]
+- !private ["So8NSObjectC", "terminationHandler"]
+- !private ["So8NSObjectP", "Process"]
+- !private ["So8NSObjectP", "arguments"]
+- !private ["So8NSObjectP", "executableURL"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "terminationHandler"]
+- ["So6NSTaskC", "Process"]
+- !private ["So6NSTaskC", "arguments"]
+- !private ["So6NSTaskC", "executableURL"]
+- !private ["So6NSTaskC", "init"]
+- ["So6NSTaskC", "lightCopy"]
+- !private ["So6NSTaskC", "terminationHandler"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Process"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "arguments"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "executableURL"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "terminationHandler"]
+depends-nominal:
+- !private "s7CVarArgP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s23CustomStringConvertibleP"
+- !private "SQ"
+- !private "SH"
+- "So8NSObjectC"
+- !private "So8NSObjectP"
+- "So6NSTaskC"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorCore/include/OEXPCCAgentConfiguration_Internal.h"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorCore/include/OEXPCCAgentConfiguration.h"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorCore/include/OpenEmuXPCCommunicator.h"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorCore/include/OEXPCCAgent.h"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/OpenEmuXPCCommunicatorShared.build/module.modulemap"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/OpenEmuXPCCommunicatorCore.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "a2d7f7eec715d10817fc7d973cd71a3b"

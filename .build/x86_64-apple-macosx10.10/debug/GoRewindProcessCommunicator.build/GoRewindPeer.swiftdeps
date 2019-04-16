@@ -1,0 +1,395 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "GoRewindPeer"
+provides-nominal:
+- "27GoRewindProcessCommunicator0aB4PeerC"
+provides-member:
+- ["27GoRewindProcessCommunicator0aB4PeerC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- "ContextIdentifier"
+- "GoRewindPeer"
+- !private "GoRewindProcessConstants"
+- "GoRewindProcessProtocol"
+- "NSObject"
+- "NSXPCConnection"
+- !private "NSXPCInterface"
+- "NSXPCListener"
+- "NSXPCListenerDelegate"
+- !private "OEXPCCAgent"
+- "Protocol"
+- !private "StringLiteralType"
+- !private "UnicodeScalarType"
+- !private "print"
+depends-member:
+- !private ["SK", "init"]
+- !private ["SK", "init"]
+- !private ["s7CVarArgP", "GoRewindProcessConstants"]
+- !private ["s7CVarArgP", "NSXPCInterface"]
+- !private ["s7CVarArgP", "NSXPCListener"]
+- !private ["s7CVarArgP", "OEXPCCAgent"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "anonymous"]
+- !private ["s7CVarArgP", "currentContextIdentifier"]
+- !private ["s7CVarArgP", "defaultAgent"]
+- !private ["s7CVarArgP", "delegate"]
+- !private ["s7CVarArgP", "endpoint"]
+- !private ["s7CVarArgP", "exportedInterface"]
+- !private ["s7CVarArgP", "exportedObject"]
+- !private ["s7CVarArgP", "handler"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "init"]
+- ["s7CVarArgP", "listener"]
+- !private ["s7CVarArgP", "localProtocol"]
+- !private ["s7CVarArgP", "onHandshake"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "register"]
+- !private ["s7CVarArgP", "remoteObjectInterface"]
+- !private ["s7CVarArgP", "remoteObjectProxyWithErrorHandler"]
+- !private ["s7CVarArgP", "remoteProtocol"]
+- !private ["s7CVarArgP", "resume"]
+- !private ["Sl", "init"]
+- !private ["Sl", "init"]
+- !private ["SL", "init"]
+- !private ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "GoRewindProcessConstants"]
+- !private ["s28CustomDebugStringConvertibleP", "NSXPCInterface"]
+- !private ["s28CustomDebugStringConvertibleP", "NSXPCListener"]
+- !private ["s28CustomDebugStringConvertibleP", "OEXPCCAgent"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "anonymous"]
+- !private ["s28CustomDebugStringConvertibleP", "currentContextIdentifier"]
+- !private ["s28CustomDebugStringConvertibleP", "defaultAgent"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- !private ["s28CustomDebugStringConvertibleP", "endpoint"]
+- !private ["s28CustomDebugStringConvertibleP", "exportedInterface"]
+- !private ["s28CustomDebugStringConvertibleP", "exportedObject"]
+- !private ["s28CustomDebugStringConvertibleP", "handler"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "listener"]
+- !private ["s28CustomDebugStringConvertibleP", "localProtocol"]
+- !private ["s28CustomDebugStringConvertibleP", "onHandshake"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "register"]
+- !private ["s28CustomDebugStringConvertibleP", "remoteObjectInterface"]
+- !private ["s28CustomDebugStringConvertibleP", "remoteObjectProxyWithErrorHandler"]
+- !private ["s28CustomDebugStringConvertibleP", "remoteProtocol"]
+- !private ["s28CustomDebugStringConvertibleP", "resume"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "GoRewindProcessConstants"]
+- !private ["s23CustomStringConvertibleP", "NSXPCInterface"]
+- !private ["s23CustomStringConvertibleP", "NSXPCListener"]
+- !private ["s23CustomStringConvertibleP", "OEXPCCAgent"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "anonymous"]
+- !private ["s23CustomStringConvertibleP", "currentContextIdentifier"]
+- !private ["s23CustomStringConvertibleP", "defaultAgent"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
+- !private ["s23CustomStringConvertibleP", "endpoint"]
+- !private ["s23CustomStringConvertibleP", "exportedInterface"]
+- !private ["s23CustomStringConvertibleP", "exportedObject"]
+- !private ["s23CustomStringConvertibleP", "handler"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "listener"]
+- !private ["s23CustomStringConvertibleP", "localProtocol"]
+- !private ["s23CustomStringConvertibleP", "onHandshake"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "register"]
+- !private ["s23CustomStringConvertibleP", "remoteObjectInterface"]
+- !private ["s23CustomStringConvertibleP", "remoteObjectProxyWithErrorHandler"]
+- !private ["s23CustomStringConvertibleP", "remoteProtocol"]
+- !private ["s23CustomStringConvertibleP", "resume"]
+- !private ["Se", "init"]
+- !private ["Se", "init"]
+- !private ["SE", "init"]
+- !private ["SE", "init"]
+- !private ["SQ", "GoRewindProcessConstants"]
+- !private ["SQ", "NSXPCInterface"]
+- !private ["SQ", "NSXPCListener"]
+- !private ["SQ", "OEXPCCAgent"]
+- ["SQ", ""]
+- !private ["SQ", "anonymous"]
+- !private ["SQ", "currentContextIdentifier"]
+- !private ["SQ", "defaultAgent"]
+- !private ["SQ", "delegate"]
+- !private ["SQ", "endpoint"]
+- !private ["SQ", "exportedInterface"]
+- !private ["SQ", "exportedObject"]
+- !private ["SQ", "handler"]
+- !private ["SQ", "init"]
+- !private ["SQ", "init"]
+- ["SQ", "listener"]
+- !private ["SQ", "localProtocol"]
+- !private ["SQ", "onHandshake"]
+- !private ["SQ", "print"]
+- !private ["SQ", "register"]
+- !private ["SQ", "remoteObjectInterface"]
+- !private ["SQ", "remoteObjectProxyWithErrorHandler"]
+- !private ["SQ", "remoteProtocol"]
+- !private ["SQ", "resume"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "Bool"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "ContextIdentifier"]
+- !private ["27GoRewindProcessCommunicator0aB4PeerC", "GoRewindProcessConstants"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "GoRewindProcessProtocol"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "NSXPCConnection"]
+- !private ["27GoRewindProcessCommunicator0aB4PeerC", "NSXPCInterface"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "NSXPCListener"]
+- !private ["27GoRewindProcessCommunicator0aB4PeerC", "OEXPCCAgent"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "Protocol"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "S"]
+- !private ["27GoRewindProcessCommunicator0aB4PeerC", "currentContextIdentifier"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "deinit"]
+- !private ["27GoRewindProcessCommunicator0aB4PeerC", "handler"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "init"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "listen"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "listener"]
+- !private ["27GoRewindProcessCommunicator0aB4PeerC", "localProtocol"]
+- ["27GoRewindProcessCommunicator0aB4PeerC", "onHandshake"]
+- !private ["27GoRewindProcessCommunicator0aB4PeerC", "print"]
+- !private ["27GoRewindProcessCommunicator0aB4PeerC", "remoteProtocol"]
+- !private ["27GoRewindProcessCommunicator0abC9ConstantsV", "fullServiceName"]
+- !private ["SH", "GoRewindProcessConstants"]
+- !private ["SH", "NSXPCInterface"]
+- !private ["SH", "NSXPCListener"]
+- !private ["SH", "OEXPCCAgent"]
+- ["SH", ""]
+- !private ["SH", "anonymous"]
+- !private ["SH", "currentContextIdentifier"]
+- !private ["SH", "defaultAgent"]
+- !private ["SH", "delegate"]
+- !private ["SH", "endpoint"]
+- !private ["SH", "exportedInterface"]
+- !private ["SH", "exportedObject"]
+- !private ["SH", "handler"]
+- !private ["SH", "init"]
+- !private ["SH", "init"]
+- ["SH", "listener"]
+- !private ["SH", "localProtocol"]
+- !private ["SH", "onHandshake"]
+- !private ["SH", "print"]
+- !private ["SH", "register"]
+- !private ["SH", "remoteObjectInterface"]
+- !private ["SH", "remoteObjectProxyWithErrorHandler"]
+- !private ["SH", "remoteProtocol"]
+- !private ["SH", "resume"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "ContextIdentifier"]
+- !private ["So8NSObjectC", "GoRewindProcessConstants"]
+- ["So8NSObjectC", "GoRewindProcessProtocol"]
+- ["So8NSObjectC", "NSXPCConnection"]
+- !private ["So8NSObjectC", "NSXPCInterface"]
+- ["So8NSObjectC", "NSXPCListener"]
+- !private ["So8NSObjectC", "OEXPCCAgent"]
+- ["So8NSObjectC", "Protocol"]
+- ["So8NSObjectC", "S"]
+- ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "anonymous"]
+- ["So8NSObjectC", "currentContextIdentifier"]
+- !private ["So8NSObjectC", "defaultAgent"]
+- !private ["So8NSObjectC", "delegate"]
+- !private ["So8NSObjectC", "endpoint"]
+- !private ["So8NSObjectC", "exportedInterface"]
+- !private ["So8NSObjectC", "exportedObject"]
+- ["So8NSObjectC", "handler"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "listen"]
+- ["So8NSObjectC", "listener"]
+- ["So8NSObjectC", "localProtocol"]
+- ["So8NSObjectC", "onHandshake"]
+- !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "register"]
+- !private ["So8NSObjectC", "remoteObjectInterface"]
+- !private ["So8NSObjectC", "remoteObjectProxyWithErrorHandler"]
+- ["So8NSObjectC", "remoteProtocol"]
+- !private ["So8NSObjectC", "resume"]
+- !private ["So8NSObjectP", "GoRewindProcessConstants"]
+- !private ["So8NSObjectP", "NSXPCInterface"]
+- !private ["So8NSObjectP", "NSXPCListener"]
+- !private ["So8NSObjectP", "OEXPCCAgent"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "anonymous"]
+- !private ["So8NSObjectP", "currentContextIdentifier"]
+- !private ["So8NSObjectP", "defaultAgent"]
+- !private ["So8NSObjectP", "delegate"]
+- !private ["So8NSObjectP", "endpoint"]
+- !private ["So8NSObjectP", "exportedInterface"]
+- !private ["So8NSObjectP", "exportedObject"]
+- !private ["So8NSObjectP", "handler"]
+- !private ["So8NSObjectP", "init"]
+- ["So8NSObjectP", "listener"]
+- !private ["So8NSObjectP", "localProtocol"]
+- !private ["So8NSObjectP", "onHandshake"]
+- !private ["So8NSObjectP", "print"]
+- !private ["So8NSObjectP", "register"]
+- !private ["So8NSObjectP", "remoteObjectInterface"]
+- !private ["So8NSObjectP", "remoteObjectProxyWithErrorHandler"]
+- !private ["So8NSObjectP", "remoteProtocol"]
+- !private ["So8NSObjectP", "resume"]
+- !private ["So15NSXPCConnectionC", "exportedInterface"]
+- !private ["So15NSXPCConnectionC", "exportedObject"]
+- !private ["So15NSXPCConnectionC", "remoteObjectInterface"]
+- !private ["So15NSXPCConnectionC", "remoteObjectProxyWithErrorHandler"]
+- !private ["So15NSXPCConnectionC", "resume"]
+- !private ["So14NSXPCInterfaceC", "init"]
+- !private ["So13NSXPCListenerC", "anonymous"]
+- !private ["So13NSXPCListenerC", "delegate"]
+- !private ["So13NSXPCListenerC", "endpoint"]
+- !private ["So13NSXPCListenerC", "resume"]
+- !private ["So21NSXPCListenerDelegateP", "GoRewindProcessConstants"]
+- !private ["So21NSXPCListenerDelegateP", "NSXPCInterface"]
+- !private ["So21NSXPCListenerDelegateP", "NSXPCListener"]
+- !private ["So21NSXPCListenerDelegateP", "OEXPCCAgent"]
+- ["So21NSXPCListenerDelegateP", ""]
+- !private ["So21NSXPCListenerDelegateP", "currentContextIdentifier"]
+- !private ["So21NSXPCListenerDelegateP", "handler"]
+- ["So21NSXPCListenerDelegateP", "listener"]
+- !private ["So21NSXPCListenerDelegateP", "localProtocol"]
+- !private ["So21NSXPCListenerDelegateP", "onHandshake"]
+- !private ["So21NSXPCListenerDelegateP", "print"]
+- !private ["So21NSXPCListenerDelegateP", "remoteProtocol"]
+- !private ["So18NSXPCProxyCreatingP", "exportedInterface"]
+- !private ["So18NSXPCProxyCreatingP", "exportedObject"]
+- !private ["So18NSXPCProxyCreatingP", "remoteObjectInterface"]
+- !private ["So18NSXPCProxyCreatingP", "remoteObjectProxyWithErrorHandler"]
+- !private ["So18NSXPCProxyCreatingP", "resume"]
+- !private ["So11OEXPCCAgentC", "defaultAgent"]
+- !private ["So11OEXPCCAgentC", "register"]
+- !private ["Sm", "init"]
+- !private ["Sm", "init"]
+- !private ["ST", "init"]
+- !private ["ST", "init"]
+- !private ["s12StaticStringV", "init"]
+- !private ["s12StaticStringV", "init"]
+- !private ["SS", "init"]
+- !private ["SS", "init"]
+- !private ["Sy", "init"]
+- !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "GoRewindProcessConstants"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSXPCInterface"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSXPCListener"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "OEXPCCAgent"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "anonymous"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "currentContextIdentifier"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "defaultAgent"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "endpoint"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "exportedInterface"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "exportedObject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "handler"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "listener"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "localProtocol"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "onHandshake"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "register"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "remoteObjectInterface"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "remoteObjectProxyWithErrorHandler"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "remoteProtocol"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "resume"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "SK"
+- "s7CVarArgP"
+- !private "Sl"
+- !private "SL"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "27GoRewindProcessCommunicator0aB4PeerC"
+- !private "27GoRewindProcessCommunicator0abC9ConstantsV"
+- "SH"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So15NSXPCConnectionC"
+- !private "So14NSXPCInterfaceC"
+- !private "So13NSXPCListenerC"
+- "So21NSXPCListenerDelegateP"
+- !private "So18NSXPCProxyCreatingP"
+- !private "So11OEXPCCAgentC"
+- !private "Sm"
+- !private "ST"
+- !private "s12StaticStringV"
+- !private "SS"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorCore/include/OEXPCCAgentConfiguration_Internal.h"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorCore/include/OEXPCCAgentConfiguration.h"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorCore/include/OpenEmuXPCCommunicator.h"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorCore/include/OEXPCCAgent.h"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/OpenEmuXPCCommunicatorShared.build/module.modulemap"
+- "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/.build/x86_64-apple-macosx10.10/debug/OpenEmuXPCCommunicatorCore.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "036f46e81bd511c5d39e169f64949077"
