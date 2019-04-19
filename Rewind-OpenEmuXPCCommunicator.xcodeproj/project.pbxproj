@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E203CC1226A86D30061E557 /* OpenEmuXPCCommunicatorAgent in CopyFiles */ = {isa = PBXBuildFile; fileRef = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent::Product" /* OpenEmuXPCCommunicatorAgent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9E63EF8E226A0ECA0016174A /* OEXPCCAgentConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* OEXPCCAgentConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E63EF8F226A0ECD0016174A /* OEXPCCAgentConfiguration_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* OEXPCCAgentConfiguration_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E63EF90226A0ECF0016174A /* GoRewindProcessCommunicator.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* GoRewindProcessCommunicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9E203CC2226A87050061E557 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent";
+			remoteInfo = OpenEmuXPCCommunicatorAgent;
+		};
 		9ECA66532269DA9D00283E0B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -44,6 +52,19 @@
 			remoteInfo = OpenEmuXPCCommunicatorShared;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9E203CC0226A86C90061E557 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				9E203CC1226A86D30061E557 /* OpenEmuXPCCommunicatorAgent in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9ECA6664226A06EE00283E0B /* OEXPCCMatchMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEXPCCMatchMaker.h; sourceTree = "<group>"; };
@@ -196,10 +217,12 @@
 				9ECA66A4226A0C8500283E0B /* Headers */,
 				OBJ_45 /* Sources */,
 				OBJ_53 /* Frameworks */,
+				9E203CC0226A86C90061E557 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9E203CC3226A87050061E557 /* PBXTargetDependency */,
 				OBJ_58 /* PBXTargetDependency */,
 			);
 			name = GoRewindProcessCommunicator;
@@ -305,6 +328,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9E203CC3226A87050061E557 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent" /* OpenEmuXPCCommunicatorAgent */;
+			targetProxy = 9E203CC2226A87050061E557 /* PBXContainerItemProxy */;
+		};
 		OBJ_58 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared" /* OpenEmuXPCCommunicatorShared */;
