@@ -21,17 +21,12 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
     private var handler: GoRewindProcessProtocol
     private var shouldTerminate: Bool = false
     
-    public init?(executable: String, localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString) {
+    public init?(launchUrl: URL, localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString) {
         self.remoteContextIdentifier = remoteContextIdentifier
         self.remoteProtocol = remoteProtocol
         self.localProtocol = localProtocol
         self.handler = handler
-        
-        guard let launchPath = Bundle.main.url(forResource: executable, withExtension: nil) else {
-            print("OpenEmuXPCBackgroundSwift not found.")
-            return nil   
-        }
-        
+
         let config = OEXPCCAgentConfiguration.current()
         
         guard let serviceName = config?.agentServiceNameProcessArgument() else {
@@ -45,7 +40,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
         }
         
         process = Process()
-        process?.executableURL = launchPath
+        process?.executableURL = launchUrl
         process?.arguments = [serviceName, processIdentifier]
         process?.terminationHandler = { [weak self] _process in
             guard let self = self else { return }

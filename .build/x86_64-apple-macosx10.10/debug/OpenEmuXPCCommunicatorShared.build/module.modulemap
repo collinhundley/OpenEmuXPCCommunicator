@@ -1,4 +1,0 @@
-module OpenEmuXPCCommunicatorShared {
-    umbrella "/Users/kostik/dev/Rewind-OpenEmuXPCCommunicator/Sources/OpenEmuXPCCommunicatorShared/include"
-    export *
-}
