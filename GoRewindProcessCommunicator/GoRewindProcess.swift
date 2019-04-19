@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import OpenEmuXPCCommunicatorCore
 
 public class GoRewindProcess<S: GoRewindProcessProtocol> {    
     public var service: S?

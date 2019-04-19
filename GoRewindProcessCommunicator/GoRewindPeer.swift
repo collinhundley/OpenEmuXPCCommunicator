@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import OpenEmuXPCCommunicatorCore
+//import OEXPCCAgent
 
 public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDelegate {
     private let listener: NSXPCListener

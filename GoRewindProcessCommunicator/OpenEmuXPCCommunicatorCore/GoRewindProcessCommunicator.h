@@ -26,5 +26,5 @@
 
 #import <Foundation/Foundation.h>
 
-#import "OEXPCCAgentConfiguration.h"
-#import "OEXPCCAgent.h"
+#import "GoRewindProcessCommunicator/OEXPCCAgent.h"
+#import "GoRewindProcessCommunicator/OEXPCCAgentConfiguration.h"

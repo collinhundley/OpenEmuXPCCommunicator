@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import OpenEmuXPCCommunicatorCore
 
 public class GoRewindProcessCommunicator {
     public static func terminate() {
