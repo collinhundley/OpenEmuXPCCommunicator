@@ -28,3 +28,4 @@
 
 #import "GoRewindProcessCommunicator/OEXPCCAgent.h"
 #import "GoRewindProcessCommunicator/OEXPCCAgentConfiguration.h"
+#import "GoRewindProcessCommunicator/OEXPCCAgentConfiguration_Internal.h"
