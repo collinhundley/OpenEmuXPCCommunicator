@@ -13,7 +13,6 @@
 		9E63EF90226A0ECF0016174A /* GoRewindProcessCommunicator.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* GoRewindProcessCommunicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ECA6665226A080500283E0B /* OEXPCCAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* OEXPCCAgent.m */; };
 		9ECA6666226A080C00283E0B /* OEXPCCAgentConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* OEXPCCAgentConfiguration.m */; };
-		9ECA66A3226A0C7C00283E0B /* OEXPCCMatchMaking.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* OEXPCCMatchMaking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ECA66A7226A0DD400283E0B /* OEXPCCAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* OEXPCCAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		OBJ_46 /* GoRewindPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* GoRewindPeer.swift */; };
 		OBJ_47 /* GoRewindProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* GoRewindProcess.swift */; };
@@ -22,11 +21,8 @@
 		OBJ_50 /* GoRewindProcessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* GoRewindProcessProtocol.swift */; };
 		OBJ_51 /* GoRewindRunningProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* GoRewindRunningProcess.swift */; };
 		OBJ_52 /* Process+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Process+Extensions.swift */; };
-		OBJ_55 /* OpenEmuXPCCommunicatorShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product" /* OpenEmuXPCCommunicatorShared.framework */; };
 		OBJ_65 /* OEXPCCMatchMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* OEXPCCMatchMaker.m */; };
 		OBJ_66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* main.m */; };
-		OBJ_68 /* OpenEmuXPCCommunicatorShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product" /* OpenEmuXPCCommunicatorShared.framework */; };
-		OBJ_83 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,20 +32,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent";
 			remoteInfo = OpenEmuXPCCommunicatorAgent;
-		};
-		9ECA66532269DA9D00283E0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared";
-			remoteInfo = OpenEmuXPCCommunicatorShared;
-		};
-		9ECA66562269DA9D00283E0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared";
-			remoteInfo = OpenEmuXPCCommunicatorShared;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -68,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		9ECA6664226A06EE00283E0B /* OEXPCCMatchMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEXPCCMatchMaker.h; sourceTree = "<group>"; };
-		OBJ_11 /* dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
 		OBJ_13 /* OEXPCCMatchMaking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OEXPCCMatchMaking.h; sourceTree = "<group>"; };
 		OBJ_16 /* OEXPCCMatchMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OEXPCCMatchMaker.m; sourceTree = "<group>"; };
 		OBJ_17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,7 +68,6 @@
 		OBJ_33 /* GoRewindProcessCommunicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoRewindProcessCommunicator.h; sourceTree = "<group>"; };
 		"Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator::Product" /* GoRewindProcessCommunicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoRewindProcessCommunicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent::Product" /* OpenEmuXPCCommunicatorAgent */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = OpenEmuXPCCommunicatorAgent; sourceTree = BUILT_PRODUCTS_DIR; };
-		"Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product" /* OpenEmuXPCCommunicatorShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenEmuXPCCommunicatorShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,19 +75,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_55 /* OpenEmuXPCCommunicatorShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		OBJ_67 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_68 /* OpenEmuXPCCommunicatorShared.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
@@ -120,7 +91,6 @@
 		OBJ_10 /* OpenEmuXPCCommunicatorShared */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* dummy.m */,
 				OBJ_13 /* OEXPCCMatchMaking.h */,
 			);
 			path = OpenEmuXPCCommunicatorShared;
@@ -170,7 +140,6 @@
 			children = (
 				"Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator::Product" /* GoRewindProcessCommunicator.framework */,
 				"Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent::Product" /* OpenEmuXPCCommunicatorAgent */,
-				"Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product" /* OpenEmuXPCCommunicatorShared.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -188,14 +157,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9ECA66A2226A0C7400283E0B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9ECA66A3226A0C7C00283E0B /* OEXPCCMatchMaking.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9ECA66A4226A0C8500283E0B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,7 +184,6 @@
 			);
 			dependencies = (
 				9E203CC3226A87050061E557 /* PBXTargetDependency */,
-				OBJ_58 /* PBXTargetDependency */,
 			);
 			name = GoRewindProcessCommunicator;
 			productName = GoRewindProcessCommunicator;
@@ -240,29 +200,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_69 /* PBXTargetDependency */,
 			);
 			name = OpenEmuXPCCommunicatorAgent;
 			productName = OpenEmuXPCCommunicatorAgent;
 			productReference = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent::Product" /* OpenEmuXPCCommunicatorAgent */;
 			productType = "com.apple.product-type.tool";
-		};
-		"Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared" /* OpenEmuXPCCommunicatorShared */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_79 /* Build configuration list for PBXNativeTarget "OpenEmuXPCCommunicatorShared" */;
-			buildPhases = (
-				9ECA66A2226A0C7400283E0B /* Headers */,
-				OBJ_82 /* Sources */,
-				OBJ_84 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OpenEmuXPCCommunicatorShared;
-			productName = OpenEmuXPCCommunicatorShared;
-			productReference = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared::Product" /* OpenEmuXPCCommunicatorShared.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -286,7 +228,6 @@
 			targets = (
 				"Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator" /* GoRewindProcessCommunicator */,
 				"Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent" /* OpenEmuXPCCommunicatorAgent */,
-				"Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared" /* OpenEmuXPCCommunicatorShared */,
 			);
 		};
 /* End PBXProject section */
@@ -317,14 +258,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_82 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_83 /* dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -332,16 +265,6 @@
 			isa = PBXTargetDependency;
 			target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent" /* OpenEmuXPCCommunicatorAgent */;
 			targetProxy = 9E203CC2226A87050061E557 /* PBXContainerItemProxy */;
-		};
-		OBJ_58 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared" /* OpenEmuXPCCommunicatorShared */;
-			targetProxy = 9ECA66562269DA9D00283E0B /* PBXContainerItemProxy */;
-		};
-		OBJ_69 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorShared" /* OpenEmuXPCCommunicatorShared */;
-			targetProxy = 9ECA66532269DA9D00283E0B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -498,60 +421,6 @@
 			};
 			name = Release;
 		};
-		OBJ_80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/OpenEmuXPCCommunicatorShared",
-				);
-				INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/OpenEmuXPCCommunicatorShared_Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = OpenEmuXPCCommunicatorShared;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				TARGET_NAME = OpenEmuXPCCommunicatorShared;
-			};
-			name = Debug;
-		};
-		OBJ_81 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/OpenEmuXPCCommunicatorShared",
-				);
-				INFOPLIST_FILE = "Rewind-OpenEmuXPCCommunicator.xcodeproj/OpenEmuXPCCommunicatorShared_Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = OpenEmuXPCCommunicatorShared;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				TARGET_NAME = OpenEmuXPCCommunicatorShared;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,15 +447,6 @@
 			buildConfigurations = (
 				OBJ_62 /* Debug */,
 				OBJ_63 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_79 /* Build configuration list for PBXNativeTarget "OpenEmuXPCCommunicatorShared" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_80 /* Debug */,
-				OBJ_81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
