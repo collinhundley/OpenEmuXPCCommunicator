@@ -11,13 +11,14 @@ import Foundation
 public typealias ContextIdentifier = String
 
 public struct GoRewindProcessConstants {
-
+    
+    // `M37GitBranch` key needs to be present in all targets
     private static var serviceNamePrefix: String {
-        #if DEBUG
-        return "dev."
-        #else
-        return ""
-        #endif
+        if let branch = (Bundle.main.object(forInfoDictionaryKey: "M37GitBranch") as? String) {
+            return branch + "."
+        } else {
+            return ""
+        }
     }
     
     public static var fullServiceName: String {
