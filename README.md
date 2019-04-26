@@ -30,7 +30,7 @@ OEXPCCAgentConfiguration.defaultConfiguration(withName: GoRewindProcessConstants
 OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName)
 ```
 
-###Peer
+### Peer
 ```
 var peer: GoRewindPeer<RemoteProtocol>!
 ...
@@ -49,7 +49,7 @@ Both `RemoteProtocol` and `LocalProtocol` inherit from `GoRewindProcessProtocol`
 
 After handshake is successfull, `service` callback (or `peer.service`) can be used.
 
-###GoRewindRunningProcess
+### GoRewindRunningProcess
 
 `GoRewindRunningProcess` presumes the peer is already alive & running. Usage is very similar to `peer`:
 ```
@@ -69,7 +69,7 @@ process?.connect()
 process?.service?.doSomething()
 ```
 
-###GoRewindProcess
+### GoRewindProcess
 
 `GoRewindProcess` is the same as `GoRewindRunningProcess`, except it also runs the executable.
 ```
