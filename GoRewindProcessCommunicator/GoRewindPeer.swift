@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import OEXPCCAgent
 
 public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDelegate {
     private let listener: NSXPCListener
@@ -16,6 +15,7 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
     private let handler: GoRewindProcessProtocol
     private let currentContextIdentifier: ContextIdentifier
     
+    public var service: S?
     public var onHandshake: ((_ service: S) -> ())?
     
     public init(handler: GoRewindProcessProtocol, localProtocol: Protocol, remoteProtocol: Protocol, currentContextIdentifier: ContextIdentifier) {
@@ -43,7 +43,7 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
         newConnection.remoteObjectInterface = NSXPCInterface(with: self.remoteProtocol)
         newConnection.resume()
         
-        let service = newConnection.remoteObjectProxyWithErrorHandler { error in
+        self.service = newConnection.remoteObjectProxyWithErrorHandler { error in
             print("Peer process error:", error)
         } as? S
         
