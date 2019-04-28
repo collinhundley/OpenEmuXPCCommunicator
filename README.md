@@ -91,7 +91,6 @@ Todo list
 ---------
 
 + Setup and `launchd` the agent on app installation 
-+ Use the `M37GitBranch` key from the main application or introduce a new method to differentiate between environments
 + Combine `GoRewindRunningProcess` and `GoRewindProcess` classes: start the executable only if it isn't running yet
 
 ---
