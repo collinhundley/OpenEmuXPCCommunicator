@@ -48,7 +48,7 @@ public class GoRewindProcessCommunicator {
         
         OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())
         
-        os_log("SetupConnection. fullServiceName: %{public}@. Start agent? %{public}@", GoRewindProcessConstants.fullServiceName(), startAgent.description) 
+        os_log("SetupConnection. fullServiceName: %{public}@. Start agent? %{public}@", log: OSLog.xpc, type: .debug, GoRewindProcessConstants.fullServiceName(), startAgent.description) 
     }
     
     

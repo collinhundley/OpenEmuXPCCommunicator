@@ -63,7 +63,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
             return
         }
         
-        os_log("Starting GoRewindProcess. fullServiceName: %{public}@", type: .info, GoRewindProcessConstants.fullServiceName()) 
+        os_log("Starting GoRewindProcess. fullServiceName: %{public}@", log: OSLog.xpc, type: .debug, GoRewindProcessConstants.fullServiceName()) 
         
         OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())?.retrieveListenerEndpoint(forIdentifier: self.remoteContextIdentifier, completionHandler: { [weak self] endpoint in
             guard let self = self, 
