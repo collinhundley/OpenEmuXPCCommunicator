@@ -26,7 +26,7 @@ public class GoRewindRunningProcess<S: GoRewindProcessProtocol> {
     }
     
     public func connect() {
-        OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName)?.retrieveListenerEndpoint(forIdentifier: self.remoteContextIdentifier, completionHandler: { [weak self] endpoint in
+        OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())?.retrieveListenerEndpoint(forIdentifier: self.remoteContextIdentifier, completionHandler: { [weak self] endpoint in
             guard let self = self, 
                 let theEndpoint = endpoint else {
                     print("Endpoint `\(endpoint.debugDescription)` is not available.")

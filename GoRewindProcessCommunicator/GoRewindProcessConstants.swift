@@ -14,9 +14,11 @@ public struct GoRewindProcessConstants {
 
     internal static var serviceNamePrefix: String  = ""      
    
-    public static var fullServiceName: String {
-        return "ai.m37.GoRewind.OEXPCCAgent." + serviceName
+    public static func fullServiceName() -> String {
+        return "ai.m37.GoRewind.OEXPCCAgent." + serviceName()
     }
     
-    public static let serviceName = serviceNamePrefix + "gorewind-agent"
+    public static func serviceName() -> String {
+        return serviceNamePrefix + "gorewind-agent"
+    }   
 }

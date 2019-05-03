@@ -32,7 +32,7 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
     
     public func listen() {
         listener.resume()        
-        OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName)?.register(listener.endpoint, forIdentifier: self.currentContextIdentifier, completionHandler: { success in
+        OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())?.register(listener.endpoint, forIdentifier: self.currentContextIdentifier, completionHandler: { success in
             print("Register OEXPCCAgent handler: \(success). [\(self.currentContextIdentifier)]")
         })
     }

@@ -42,10 +42,10 @@ public class GoRewindProcessCommunicator {
         #endif
         
         if startAgent {
-            OEXPCCAgentConfiguration.defaultConfiguration(withName: GoRewindProcessConstants.serviceName)
+            OEXPCCAgentConfiguration.defaultConfiguration(withName: GoRewindProcessConstants.serviceName())
         }
         
-        OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName)
+        OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())
     }
     
     
