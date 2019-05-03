@@ -20,8 +20,10 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
     private let remoteProtocol: Protocol
     private var handler: GoRewindProcessProtocol
     private var shouldTerminate: Bool = false
+    private var launchUrl: URL
     
     public init?(launchUrl: URL, localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString) {
+        self.launchUrl = launchUrl
         self.remoteContextIdentifier = remoteContextIdentifier
         self.remoteProtocol = remoteProtocol
         self.localProtocol = localProtocol
@@ -63,7 +65,10 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
             return
         }
         
-        os_log("Starting GoRewindProcess. fullServiceName: %{public}@", log: OSLog.xpc, type: .debug, GoRewindProcessConstants.fullServiceName()) 
+        os_log("Starting GoRewindProcess. fullServiceName: %{public}@. Via: %{public}@. launchUrl: %{public}@", 
+               log: OSLog.xpc, 
+               type: .info, 
+               GoRewindProcessConstants.fullServiceName(), remoteContextIdentifier, launchUrl.path) 
         
         OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())?.retrieveListenerEndpoint(forIdentifier: self.remoteContextIdentifier, completionHandler: { [weak self] endpoint in
             guard let self = self, 

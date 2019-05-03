@@ -27,7 +27,10 @@ public class GoRewindRunningProcess<S: GoRewindProcessProtocol> {
     }
     
     public func connect() {
-        os_log("Connecting to GoRewindRunningProcess. fullServiceName: %{public}@", log: OSLog.xpc, type: .debug, GoRewindProcessConstants.fullServiceName()) 
+        os_log("Connecting to GoRewindRunningProcess. fullServiceName: %{public}@. Via: %{public}@", 
+               log: OSLog.xpc, 
+               type: .info, 
+               GoRewindProcessConstants.fullServiceName(), remoteContextIdentifier) 
         
         OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())?.retrieveListenerEndpoint(forIdentifier: self.remoteContextIdentifier, completionHandler: { [weak self] endpoint in
             guard let self = self, 

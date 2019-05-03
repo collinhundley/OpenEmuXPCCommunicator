@@ -14,6 +14,11 @@ public class GoRewindProcessCommunicator {
     private static func infoPlist(plistUrl: URL) -> Dictionary<String, AnyObject>? {    
         guard FileManager.default.fileExists(atPath: plistUrl.path) else { return nil }
         
+        os_log("Using plist: %{public}@", 
+               log: OSLog.xpc, 
+               type: .info, 
+               plistUrl.path) 
+        
         if let pListData = FileManager.default.contents(atPath: plistUrl.path) {
             do {
                 let pListObject = try PropertyListSerialization.propertyList(from: pListData, options:PropertyListSerialization.ReadOptions(), format:nil)
@@ -48,7 +53,10 @@ public class GoRewindProcessCommunicator {
         
         OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())
         
-        os_log("SetupConnection. fullServiceName: %{public}@. Start agent? %{public}@", log: OSLog.xpc, type: .debug, GoRewindProcessConstants.fullServiceName(), startAgent.description) 
+        os_log("SetupConnection. fullServiceName: %{public}@. Start agent? %{public}@", 
+               log: OSLog.xpc, 
+               type: .info, 
+               GoRewindProcessConstants.fullServiceName(), startAgent.description) 
     }
     
     

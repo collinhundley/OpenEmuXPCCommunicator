@@ -9,5 +9,5 @@ import Foundation
 import os.log
 
 extension OSLog {
-    static let xpc = OSLog(subsystem: "", category: "GoRewindXPC")
+    static let xpc = OSLog(subsystem: "GoRewindProcessCommunicator", category: "GoRewindXPC")
 }
