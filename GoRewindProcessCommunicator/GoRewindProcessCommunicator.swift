@@ -33,9 +33,13 @@ public class GoRewindProcessCommunicator {
     }
     
     public static func setupConnection(with plistUrl: URL, startAgent: Bool) {
+        #if DEBUG
+        GoRewindProcessConstants.serviceNamePrefix = "dev."
+        #else        
         if let plist = infoPlist(plistUrl: plistUrl), let branch = plist["M37GitBranch"] as? String {
             GoRewindProcessConstants.serviceNamePrefix = branch + "."
         }
+        #endif
         
         if startAgent {
             OEXPCCAgentConfiguration.defaultConfiguration(withName: GoRewindProcessConstants.serviceName)
