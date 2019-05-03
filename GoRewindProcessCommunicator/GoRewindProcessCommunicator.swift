@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 public class GoRewindProcessCommunicator {
     
@@ -46,6 +47,8 @@ public class GoRewindProcessCommunicator {
         }
         
         OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())
+        
+        os_log("SetupConnection. fullServiceName: %{public}@. Start agent? %{public}@", GoRewindProcessConstants.fullServiceName(), startAgent.description) 
     }
     
     

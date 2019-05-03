@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 public class GoRewindProcess<S: GoRewindProcessProtocol> {    
     public var service: S?
@@ -62,6 +63,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
             return
         }
         
+        os_log("Starting GoRewindProcess. fullServiceName: %{public}@", GoRewindProcessConstants.fullServiceName()) 
         OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())?.retrieveListenerEndpoint(forIdentifier: self.remoteContextIdentifier, completionHandler: { [weak self] endpoint in
             guard let self = self, 
                 let theEndpoint = endpoint else {
