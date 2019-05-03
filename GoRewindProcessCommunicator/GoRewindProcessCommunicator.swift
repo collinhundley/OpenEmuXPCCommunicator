@@ -42,8 +42,10 @@ public class GoRewindProcessCommunicator {
         #if DEBUG
         GoRewindProcessConstants.serviceNamePrefix = "dev."
         #else        
-        if let plist = infoPlist(plistUrl: plistUrl), let branch = plist["M37GitBranch"] as? String {
-            GoRewindProcessConstants.serviceNamePrefix = branch + "."
+        if let plist = infoPlist(plistUrl: plistUrl), let commit = plist["M37GitHash"] as? String {
+            let idx = commit.index(commit.startIndex, offsetBy: 8)
+            let sub = commit[..<idx]
+            GoRewindProcessConstants.serviceNamePrefix = String(sub) + "."
         }
         #endif
         
