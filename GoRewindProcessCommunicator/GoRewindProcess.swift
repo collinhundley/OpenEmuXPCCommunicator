@@ -41,6 +41,11 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
             return nil
         }
         
+        os_log("Launch with arguments. ServiceName: %{public}@. ProcessIdentifier: %{public}@", 
+               log: OSLog.xpc, 
+               type: .info, 
+               serviceName, processIdentifier) 
+        
         process = Process()
         process?.executableURL = launchUrl
         process?.arguments = [serviceName, processIdentifier] + arguments
