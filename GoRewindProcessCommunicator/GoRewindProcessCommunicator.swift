@@ -13,6 +13,7 @@ public class GoRewindProcessCommunicator {
     
     public enum LaunchParam {
         case debug
+        case customServiceNamePrefix(String)
         case plist(URL)
     }
     
@@ -47,6 +48,10 @@ public class GoRewindProcessCommunicator {
         switch param {
         case .debug:
             GoRewindProcessConstants.serviceNamePrefix = "dev."
+            
+        case let .customServiceNamePrefix(prefix):
+            GoRewindProcessConstants.serviceNamePrefix = prefix + "."
+            
         case let .plist(plistUrl):
             if let plist = infoPlist(plistUrl: plistUrl), let commit = plist["M37GitHash"] as? String {
                 let idx = commit.index(commit.startIndex, offsetBy: 8)
