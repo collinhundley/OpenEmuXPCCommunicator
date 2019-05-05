@@ -11,6 +11,11 @@ import os.log
 
 public class GoRewindProcessCommunicator {
     
+    public enum LaunchParam {
+        case debug
+        case plist(URL)
+    }
+    
     private static func infoPlist(plistUrl: URL) -> Dictionary<String, AnyObject>? {    
         guard FileManager.default.fileExists(atPath: plistUrl.path) else { return nil }
         
@@ -38,16 +43,17 @@ public class GoRewindProcessCommunicator {
         return nil
     }
     
-    public static func setupConnection(with plistUrl: URL, startAgent: Bool) {
-        #if DEBUG
-        GoRewindProcessConstants.serviceNamePrefix = "dev."
-        #else        
-        if let plist = infoPlist(plistUrl: plistUrl), let commit = plist["M37GitHash"] as? String {
-            let idx = commit.index(commit.startIndex, offsetBy: 8)
-            let sub = commit[..<idx]
-            GoRewindProcessConstants.serviceNamePrefix = String(sub) + "."
+    public static func setupConnection(with param: LaunchParam, startAgent: Bool) {
+        switch param {
+        case .debug:
+            GoRewindProcessConstants.serviceNamePrefix = "dev."
+        case let .plist(plistUrl):
+            if let plist = infoPlist(plistUrl: plistUrl), let commit = plist["M37GitHash"] as? String {
+                let idx = commit.index(commit.startIndex, offsetBy: 8)
+                let sub = commit[..<idx]
+                GoRewindProcessConstants.serviceNamePrefix = String(sub) + "."
+            }
         }
-        #endif
         
         if startAgent {
             OEXPCCAgentConfiguration.defaultConfiguration(withName: GoRewindProcessConstants.serviceName())
