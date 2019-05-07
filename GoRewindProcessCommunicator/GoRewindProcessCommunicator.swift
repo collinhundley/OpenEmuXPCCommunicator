@@ -44,7 +44,7 @@ public class GoRewindProcessCommunicator {
         return nil
     }
     
-    public static func setupConnection(with param: LaunchParam, startAgent: Bool) {
+    public static func setupConnection(with param: LaunchParam, launchAgentFrom applicationSupportDirectory: URL? = nil) {
         switch param {
         case .debug:
             GoRewindProcessConstants.serviceNamePrefix = "dev."
@@ -60,8 +60,8 @@ public class GoRewindProcessCommunicator {
             }
         }
         
-        if startAgent {
-            OEXPCCAgentConfiguration.defaultConfiguration(withName: GoRewindProcessConstants.serviceName())
+        if let applicationSupportDirectory = applicationSupportDirectory {
+            OEXPCCAgentConfiguration.defaultConfiguration(withName: GoRewindProcessConstants.serviceName(), applicationSupportDirectory: applicationSupportDirectory)
         }
         
         OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())
@@ -69,10 +69,10 @@ public class GoRewindProcessCommunicator {
         os_log("SetupConnection. fullServiceName: %{public}@. Start agent? %{public}@", 
                log: OSLog.xpc, 
                type: .info, 
-               GoRewindProcessConstants.fullServiceName(), startAgent.description) 
+               GoRewindProcessConstants.fullServiceName(), applicationSupportDirectory?.path ?? "[-]") 
     }
     
-    
+    // TODO: should terminate only on update? What about nativeMessagingHost?
     public static func terminate() {
         OEXPCCAgentConfiguration.current()?.tearDownAgent()
     }

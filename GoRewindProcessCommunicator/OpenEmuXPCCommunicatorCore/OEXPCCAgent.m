@@ -45,7 +45,7 @@
 
 + (NSString *)OEXPCC_serviceNameFromDefaultConfiguration
 {
-    return [[OEXPCCAgentConfiguration OEXPCC_defaultConfigurationCreateIfNeeded:NO withName:nil] serviceName];
+    return [[OEXPCCAgentConfiguration OEXPCC_defaultConfigurationCreateIfNeeded:NO withName:nil applicationSupportDirectory:nil] serviceName];
 }
 
 + (BOOL)canParseProcessArgumentsForDefaultAgent

@@ -38,21 +38,21 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
     NSString *_agentProcessPath;
 }
 
-+ (OEXPCCAgentConfiguration *)defaultConfigurationWithName:(nullable NSString *)name
++ (OEXPCCAgentConfiguration *)defaultConfigurationWithName:(nullable NSString *)name applicationSupportDirectory:(NSURL *)applicationSupportDirectory
 {
     if (name == nil) {
         name = [[NSUUID UUID] UUIDString];
     }
     
-    return [self OEXPCC_defaultConfigurationCreateIfNeeded:YES withName:name];
+    return [self OEXPCC_defaultConfigurationCreateIfNeeded:YES withName:name applicationSupportDirectory:applicationSupportDirectory];
 }
 
 + (OEXPCCAgentConfiguration *)currentConfiguration
 {
-    return [self OEXPCC_defaultConfigurationCreateIfNeeded:NO withName:nil];
+    return [self OEXPCC_defaultConfigurationCreateIfNeeded:NO withName:nil applicationSupportDirectory:nil];
 }
 
-+ (OEXPCCAgentConfiguration *)OEXPCC_defaultConfigurationCreateIfNeeded:(BOOL)createIfNeeded withName:(nullable NSString *)name
++ (OEXPCCAgentConfiguration *)OEXPCC_defaultConfigurationCreateIfNeeded:(BOOL)createIfNeeded withName:(nullable NSString *)name applicationSupportDirectory:(nullable NSURL *)applicationSupportDirectory
 {
     static OEXPCCAgentConfiguration *sharedInstance = nil;
 
@@ -60,22 +60,22 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
     {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            sharedInstance = [[OEXPCCAgentConfiguration alloc] initWithName:name];
+            sharedInstance = [[OEXPCCAgentConfiguration alloc] initWithName:name applicationSupportDirectory:applicationSupportDirectory];
         });
     }
 
     return sharedInstance;
 }
 
-- (instancetype)initWithName:(nullable NSString *)name
+- (instancetype)initWithName:(nullable NSString *)name applicationSupportDirectory:(NSURL *)applicationSupportDirectory
 {
     if((self = [super init]))
     {
         _serviceName = [@[ _OEXPCCAgentServiceNamePrefix, name ] componentsJoinedByString:@""];
         _serviceNameArgument = [@[ _OEXPCCAgentServiceNameArgumentPrefix, _serviceName ] componentsJoinedByString:@""];
 
-        _agentProcessPath = [[[self class] OEXPCC_agentsApplicationSupportFolderPath] stringByAppendingPathComponent:_serviceName];
-        _agentPlistPath = [_agentProcessPath stringByAppendingPathExtension:@"plist"];
+        _agentProcessPath = [self OEXPCC_originalAgentProgramPath]; //[[[self class] OEXPCC_agentsApplicationSupportFolderPath] stringByAppendingPathComponent:_serviceName];
+        _agentPlistPath = [[[applicationSupportDirectory URLByAppendingPathComponent:_serviceName] URLByAppendingPathExtension:@"plist"] path];
 
         [self OEXPCC_setUpAgent];
     }
@@ -85,7 +85,7 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
 - (void)OEXPCC_setUpAgent
 {
     [[self OEXPCC_propertyListForAgent] writeToFile:_agentPlistPath atomically:YES];
-    [[NSFileManager defaultManager] copyItemAtPath:[self OEXPCC_originalAgentProgramPath] toPath:_agentProcessPath error:NULL];
+//    [[NSFileManager defaultManager] copyItemAtPath:[self OEXPCC_originalAgentProgramPath] toPath:_agentProcessPath error:NULL];
 
     NSTask *launchctlTask = [[NSTask alloc] init];
 
@@ -111,7 +111,7 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
     [launchctlTask waitUntilExit];
 
     [[NSFileManager defaultManager] removeItemAtPath:_agentPlistPath error:NULL];
-    [[NSFileManager defaultManager] removeItemAtPath:_agentProcessPath error:NULL];
+//    [[NSFileManager defaultManager] removeItemAtPath:_agentProcessPath error:NULL];
 }
 
 - (NSString *)agentServiceNameProcessArgument
