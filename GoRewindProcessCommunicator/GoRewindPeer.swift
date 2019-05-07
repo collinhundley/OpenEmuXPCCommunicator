@@ -15,11 +15,13 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
     private let remoteProtocol: Protocol
     private let handler: GoRewindProcessProtocol
     private let currentContextIdentifier: ContextIdentifier
+    private let exitWhenParentExits: Bool
     
     public var service: S?
     public var onHandshake: ((_ service: S) -> ())?
     
-    public init(handler: GoRewindProcessProtocol, localProtocol: Protocol, remoteProtocol: Protocol, currentContextIdentifier: ContextIdentifier) {
+    public init(handler: GoRewindProcessProtocol, localProtocol: Protocol, remoteProtocol: Protocol, currentContextIdentifier: ContextIdentifier, exitWhenParentExits: Bool = true) {
+        self.exitWhenParentExits = exitWhenParentExits
         self.listener = NSXPCListener.anonymous()
         self.localProtocol = localProtocol
         self.remoteProtocol = remoteProtocol
@@ -45,7 +47,9 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
     
     public func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
         
-        self.startMonitoringParent(with: newConnection.processIdentifier)
+        if self.exitWhenParentExits {
+            self.startMonitoringParent(with: newConnection.processIdentifier)
+        }
         
         newConnection.exportedInterface = NSXPCInterface(with: self.localProtocol)
         newConnection.exportedObject = self.handler
@@ -72,7 +76,7 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
                    type: .info, 
                    pid_t)            
             source.cancel() // Not really needed...
-            exit(-1)
+            exit(1)
         }
         source.resume()
     }
