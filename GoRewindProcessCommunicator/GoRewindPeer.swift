@@ -44,6 +44,9 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
     }
     
     public func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
+        
+        self.startMonitoringParent(with: newConnection.processIdentifier)
+        
         newConnection.exportedInterface = NSXPCInterface(with: self.localProtocol)
         newConnection.exportedObject = self.handler
         newConnection.remoteObjectInterface = NSXPCInterface(with: self.remoteProtocol)
@@ -58,5 +61,19 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
         }
         
         return true
+    }
+    
+    private func startMonitoringParent(with pid_t: pid_t) {
+        let source = DispatchSource.makeProcessSource(identifier: pid_t, 
+                                                      eventMask: DispatchSource.ProcessEvent.exit, 
+                                                      queue: DispatchQueue.global())
+        source.setEventHandler {
+            os_log("Parent process %{public}d exited", 
+                   type: .info, 
+                   pid_t)            
+            source.cancel() // Not really needed...
+            exit(-1)
+        }
+        source.resume()
     }
 }
