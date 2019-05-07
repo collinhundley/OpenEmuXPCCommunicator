@@ -65,15 +65,7 @@
 - (void)resumeConnection
 {
     [_serviceListener resume];
-
-    __block BOOL continueRunning = NO;
-    do {
-        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:10]];
-
-        dispatch_sync(_listenerQueue, ^{
-            continueRunning = [_pendingClients count] > 0 || [_pendingListeners count] > 0;
-        });
-    } while(continueRunning);
+    [[NSRunLoop currentRunLoop] run];
 }
 
 - (BOOL)listener:(NSXPCListener *)listener shouldAcceptNewConnection:(NSXPCConnection *)newConnection
