@@ -52,6 +52,8 @@
     if((self = [super init]))
     {
         _serviceName      = [serviceName copy];
+        os_log(OS_LOG_DEFAULT, "OEXPCCMatchMaker serviceName: %{public}@", _serviceName);
+        
         _serviceListener  = [[NSXPCListener alloc] initWithMachServiceName:_serviceName];
         [_serviceListener setDelegate:self];
 

@@ -31,7 +31,7 @@ int main(int argc, const char * argv[])
 {
     @autoreleasepool
     {
-        NSString *serviceName = [[[NSProcessInfo processInfo] arguments][0] lastPathComponent];
+        NSString *serviceName = [[NSProcessInfo processInfo] arguments][1];
         __attribute__((objc_precise_lifetime)) OEXPCCMatchMaker *matchMaker = [[OEXPCCMatchMaker alloc] initWithServiceName:serviceName];
 
         [matchMaker resumeConnection];

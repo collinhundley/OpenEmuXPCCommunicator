@@ -139,7 +139,7 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
 {
     return @{
         @"Label" : _serviceName,
-        @"Program" : _agentProcessPath,
+        @"ProgramArguments" : @[_agentProcessPath, _serviceName],
         @"MachServices" : @{ _serviceName : @{ } }
     };
 }
