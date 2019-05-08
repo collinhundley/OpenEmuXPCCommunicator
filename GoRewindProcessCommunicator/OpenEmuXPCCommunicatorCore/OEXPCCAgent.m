@@ -27,6 +27,7 @@
 #import "OEXPCCAgent.h"
 #import "OEXPCCMatchMaking.h"
 #import "OEXPCCAgentConfiguration_Internal.h"
+#import <os/log.h>
 
 @implementation OEXPCCAgent
 {
@@ -83,6 +84,8 @@
     {
         _serviceName = serviceName;
 
+        os_log(OS_LOG_DEFAULT, "initWithMachServiceName: %{public}@", _serviceName);
+        
         _agentConnection = [[NSXPCConnection alloc] initWithMachServiceName:_serviceName options:0];
         [_agentConnection setRemoteObjectInterface:[NSXPCInterface interfaceWithProtocol:@protocol(OEXPCCMatchMaking)]];
         [_agentConnection resume];
