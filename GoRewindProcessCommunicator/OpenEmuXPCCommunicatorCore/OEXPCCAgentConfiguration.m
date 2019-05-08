@@ -74,7 +74,7 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
         _serviceName = [@[ _OEXPCCAgentServiceNamePrefix, name ] componentsJoinedByString:@""];
         _serviceNameArgument = [@[ _OEXPCCAgentServiceNameArgumentPrefix, _serviceName ] componentsJoinedByString:@""];
 
-        _agentProcessPath = [self OEXPCC_originalAgentProgramPath]; //[[[self class] OEXPCC_agentsApplicationSupportFolderPath] stringByAppendingPathComponent:_serviceName];
+        _agentProcessPath = [self OEXPCC_originalAgentProgramPath];
         _agentPlistPath = [[[applicationSupportDirectory URLByAppendingPathComponent:_serviceName] URLByAppendingPathExtension:@"plist"] path];
 
         [self OEXPCC_setUpAgent];
@@ -84,8 +84,10 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
 
 - (void)OEXPCC_setUpAgent
 {
+    // Unload the old one
+    [self tearDownAgent];
+    
     [[self OEXPCC_propertyListForAgent] writeToFile:_agentPlistPath atomically:YES];
-//    [[NSFileManager defaultManager] copyItemAtPath:[self OEXPCC_originalAgentProgramPath] toPath:_agentProcessPath error:NULL];
 
     NSTask *launchctlTask = [[NSTask alloc] init];
 
@@ -111,7 +113,6 @@ NSString *const _OEXPCCAgentServiceNamePrefix = @"ai.m37.GoRewind.OEXPCCAgent.";
     [launchctlTask waitUntilExit];
 
     [[NSFileManager defaultManager] removeItemAtPath:_agentPlistPath error:NULL];
-//    [[NSFileManager defaultManager] removeItemAtPath:_agentProcessPath error:NULL];
 }
 
 - (NSString *)agentServiceNameProcessArgument
