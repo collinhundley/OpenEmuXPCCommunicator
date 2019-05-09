@@ -15,13 +15,11 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
     private let remoteProtocol: Protocol
     private let handler: GoRewindProcessProtocol
     private let currentContextIdentifier: ContextIdentifier
-    private let exitWhenParentExits: Bool
     
     public var service: S?
     public var onHandshake: ((_ service: S) -> ())?
     
     public init(handler: GoRewindProcessProtocol, localProtocol: Protocol, remoteProtocol: Protocol, currentContextIdentifier: ContextIdentifier, exitWhenParentExits: Bool = true) {
-        self.exitWhenParentExits = exitWhenParentExits
         self.listener = NSXPCListener.anonymous()
         self.localProtocol = localProtocol
         self.remoteProtocol = remoteProtocol
@@ -31,6 +29,10 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
         super.init()
         
         self.listener.delegate = self
+        
+        if exitWhenParentExits {
+            self.startMonitoringParent()
+        }
     }
     
     public func listen() {
@@ -46,11 +48,6 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
     }
     
     public func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
-        
-        if self.exitWhenParentExits {
-            self.startMonitoringParent(with: newConnection.processIdentifier)
-        }
-        
         newConnection.exportedInterface = NSXPCInterface(with: self.localProtocol)
         newConnection.exportedObject = self.handler
         newConnection.remoteObjectInterface = NSXPCInterface(with: self.remoteProtocol)
@@ -67,14 +64,33 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
         return true
     }
     
-    private func startMonitoringParent(with pid_t: pid_t) {
-        let source = DispatchSource.makeProcessSource(identifier: pid_t, 
+    private func startMonitoringParent() {
+        let _argument = ProcessInfo.processInfo.arguments.filter { (arg) -> Bool in
+            return arg.hasPrefix("--parent_pid=")
+            }.first 
+        
+        guard let argument = _argument else {
+            os_log("No parent_pid set.", type: .info)
+            return
+        }
+        
+        let idx = argument.range(of: "--parent_pid=")!.upperBound
+        let sPid = argument.suffix(from: idx)
+        
+        guard let pid = Int32(sPid) else {
+            os_log("Can't cast parent pid.", type: .info)
+            return
+        }
+        
+        os_log("Parent pid: %{public}d", type: .info, pid)
+        
+        let source = DispatchSource.makeProcessSource(identifier: pid, 
                                                       eventMask: DispatchSource.ProcessEvent.exit, 
                                                       queue: DispatchQueue.global())
         source.setEventHandler {
-            os_log("Parent process %{public}d exited", 
-                   type: .info, 
-                   pid_t)            
+            os_log("Parent process %{public}d exited. Self-terminating...", 
+                   type: .info,
+                   pid)            
             source.cancel() // Not really needed...
             exit(1)
         }

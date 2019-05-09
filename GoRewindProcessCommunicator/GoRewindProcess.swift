@@ -41,14 +41,16 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
             return nil
         }
         
-        os_log("Launch with arguments. ServiceName: %{public}@. ProcessIdentifier: %{public}@", 
+        let pidArg = "--parent_pid=\(ProcessInfo.processInfo.processIdentifier)"
+        
+        os_log("Launch with arguments. ServiceName: %{public}@. ProcessIdentifier: %{public}@. pidArg: %{public}@", 
                log: OSLog.xpc, 
                type: .info, 
-               serviceName, processIdentifier) 
+               serviceName, processIdentifier, pidArg) 
         
         process = Process()
         process?.executableURL = launchUrl
-        process?.arguments = [serviceName, processIdentifier] + arguments
+        process?.arguments = [serviceName, processIdentifier, pidArg] + arguments
         process?.terminationHandler = { [weak self] _process in
             guard let self = self else { return }
             if !self.shouldTerminate && _process.terminationReason == .uncaughtSignal {
