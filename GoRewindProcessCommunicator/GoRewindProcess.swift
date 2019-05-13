@@ -12,6 +12,7 @@ import os.log
 public class GoRewindProcess<S: GoRewindProcessProtocol> {    
     public var service: S?
     public var onHandshake: (() -> ())?
+    public var shouldTerminate: Bool = false
     
     private var processConnection: NSXPCConnection?
     private var process: Process?
@@ -19,7 +20,6 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
     private let localProtocol: Protocol
     private let remoteProtocol: Protocol
     private var handler: GoRewindProcessProtocol
-    private var shouldTerminate: Bool = false
     private var launchUrl: URL
     
     public init?(launchUrl: URL, arguments: [String] = [], localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString) {
@@ -100,7 +100,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
         })
     }
     
-    public func terminate() {
+    public func kill() {
         shouldTerminate = true
         process?.terminate()
         process = nil

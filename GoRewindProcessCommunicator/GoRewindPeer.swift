@@ -18,8 +18,9 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
     
     public var service: S?
     public var onHandshake: ((_ service: S) -> ())?
+    public var onParentProcessTermination: (() -> Void)?
     
-    public init(handler: GoRewindProcessProtocol, localProtocol: Protocol, remoteProtocol: Protocol, currentContextIdentifier: ContextIdentifier, exitWhenParentExits: Bool = true) {
+    public init(handler: GoRewindProcessProtocol, localProtocol: Protocol, remoteProtocol: Protocol, currentContextIdentifier: ContextIdentifier) {
         self.listener = NSXPCListener.anonymous()
         self.localProtocol = localProtocol
         self.remoteProtocol = remoteProtocol
@@ -30,9 +31,7 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
         
         self.listener.delegate = self
         
-        if exitWhenParentExits {
-            self.startMonitoringParent()
-        }
+        self.startMonitoringParent()
     }
     
     public func listen() {
@@ -88,11 +87,11 @@ public class GoRewindPeer<S: GoRewindProcessProtocol>: NSObject, NSXPCListenerDe
                                                       eventMask: DispatchSource.ProcessEvent.exit, 
                                                       queue: DispatchQueue.global())
         source.setEventHandler {
-            os_log("Parent process %{public}d exited. Self-terminating...", 
+            os_log("Parent process %{public}d exited.", 
                    type: .info,
                    pid)            
-            source.cancel() // Not really needed...
-            exit(1)
+            source.cancel()
+            self.onParentProcessTermination?()
         }
         source.resume()
     }

@@ -34,11 +34,13 @@ GoRewindProcessCommunicator.setupConnection(with: .customServiceNamePrefix("xpct
 peer = GoRewindPeer<RecorderToAppProtocol>(handler: mainAppHandler, 
                                            localProtocol: AppToRecorderProtocol.self, 
                                            remoteProtocol: RecorderToAppProtocol.self, 
-                                           currentContextIdentifier: ContextIdentifiers.recorder,
-                                           exitWhenParentExits: true)
+                                           currentContextIdentifier: ContextIdentifiers.recorder)
 peer.onHandshake = { s in
     print("Sub:Handshake")
     service = s
+}
+peer.onParentProcessTermination = {
+    print("Sub:Parent terminated.")
 }
 peer.listen()
 
