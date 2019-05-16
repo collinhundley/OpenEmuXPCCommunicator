@@ -12,6 +12,8 @@ import os.log
 public class GoRewindProcess<S: GoRewindProcessProtocol> {    
     public var service: S?
     public var onHandshake: (() -> ())?
+    public var onInterrupt: (() -> ())?
+    public var onInvalidate: (() -> ())?
     public var shouldTerminate: Bool = false
     
     private var processConnection: NSXPCConnection?
@@ -88,6 +90,8 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
             self.processConnection?.remoteObjectInterface = NSXPCInterface(with: self.remoteProtocol)
             self.processConnection?.exportedObject = self.handler
             self.processConnection?.exportedInterface = NSXPCInterface(with: self.localProtocol)
+            self.processConnection?.interruptionHandler = self.onInterrupt
+            self.processConnection?.invalidationHandler = self.onInvalidate
             self.processConnection?.resume()
             
             self.service = self.processConnection?.remoteObjectProxyWithErrorHandler { error in
