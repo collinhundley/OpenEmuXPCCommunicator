@@ -45,6 +45,20 @@
 			remoteGlobalIDString = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent";
 			remoteInfo = OpenEmuXPCCommunicatorAgent;
 		};
+		9E6A1CAD228DE4AB007C784A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent";
+			remoteInfo = OpenEmuXPCCommunicatorAgent;
+		};
+		9E6A1CAF228DE4B9007C784A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent";
+			remoteInfo = OpenEmuXPCCommunicatorAgent;
+		};
 		9E93C2A422837E3F00E291F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -107,6 +121,7 @@
 		9E2DBADA228D7F50003F526B /* XPCTestNMH */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XPCTestNMH; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E2DBADC228D7F50003F526B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9E63D0442272763400C410CC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9E6A1CB2228DEA3A007C784A /* libproc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libproc.tbd; path = usr/lib/libproc.tbd; sourceTree = SDKROOT; };
 		9E93C29022837DFF00E291F9 /* XPCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XPCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E93C29222837DFF00E291F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E93C29422837DFF00E291F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +200,14 @@
 				9E2DBADC228D7F50003F526B /* main.swift */,
 			);
 			path = XPCTestNMH;
+			sourceTree = "<group>";
+		};
+		9E6A1CB1228DEA3A007C784A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E6A1CB2228DEA3A007C784A /* libproc.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9E93C29122837DFF00E291F9 /* XPCTest */ = {
@@ -280,6 +303,7 @@
 				9E93C2AE2283851700E291F9 /* XPCTestSubprocess */,
 				9E2DBADB228D7F50003F526B /* XPCTestNMH */,
 				OBJ_36 /* Products */,
+				9E6A1CB1228DEA3A007C784A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,6 +335,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9E6A1CB0228DE4B9007C784A /* PBXTargetDependency */,
 			);
 			name = XPCTestNMH;
 			productName = XPCTestNMH;
@@ -329,6 +354,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9E6A1CAE228DE4AB007C784A /* PBXTargetDependency */,
 				9E93C2B52283858D00E291F9 /* PBXTargetDependency */,
 				9E93C2A522837E3F00E291F9 /* PBXTargetDependency */,
 			);
@@ -520,6 +546,16 @@
 			isa = PBXTargetDependency;
 			target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent" /* OpenEmuXPCCommunicatorAgent */;
 			targetProxy = 9E203CC2226A87050061E557 /* PBXContainerItemProxy */;
+		};
+		9E6A1CAE228DE4AB007C784A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent" /* OpenEmuXPCCommunicatorAgent */;
+			targetProxy = 9E6A1CAD228DE4AB007C784A /* PBXContainerItemProxy */;
+		};
+		9E6A1CB0228DE4B9007C784A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent" /* OpenEmuXPCCommunicatorAgent */;
+			targetProxy = 9E6A1CAF228DE4B9007C784A /* PBXContainerItemProxy */;
 		};
 		9E93C2A522837E3F00E291F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

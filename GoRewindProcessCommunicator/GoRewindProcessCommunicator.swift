@@ -59,10 +59,19 @@ public class GoRewindProcessCommunicator {
         }
     }
     
-    public static func pid(for contextIdentifier: ContextIdentifier, with param: LaunchParam, onCompletion: @escaping (Int?) -> Void) {
+    public static func clientPid(for contextIdentifier: ContextIdentifier, with param: LaunchParam, onCompletion: @escaping (Int?) -> Void) {
         setupServiceNamePrefix(param: param)
         let agent = OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())
-        agent?.retrievePid(forIdentifier: contextIdentifier, completionHandler: { (_pid) in
+        agent?.retrieveClientPid(forIdentifier: contextIdentifier, completionHandler: { (_pid) in
+            let pid: Int? = _pid == -1 ? nil : Int(_pid)
+            onCompletion(pid)
+        })
+    }
+    
+    public static func listenerPid(for contextIdentifier: ContextIdentifier, with param: LaunchParam, onCompletion: @escaping (Int?) -> Void) {
+        setupServiceNamePrefix(param: param)
+        let agent = OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())
+        agent?.retrieveListenerPid(forIdentifier: contextIdentifier, completionHandler: { (_pid) in
             let pid: Int? = _pid == -1 ? nil : Int(_pid)
             onCompletion(pid)
         })

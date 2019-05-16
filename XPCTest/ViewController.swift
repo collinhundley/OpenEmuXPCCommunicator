@@ -7,7 +7,9 @@
 
 import Cocoa
 import GoRewindProcessCommunicator
+import os.log
 
+fileprivate let log = OSLog(subsystem: "ai.m37.gorewindTest", category: "BrowserHandler")
 
 final class RecorderHandler: RecorderToAppProtocol {
     func updateStatistics(frameCount: Int, CPUperHour: Int) {
@@ -19,6 +21,20 @@ final class RecorderHandler: RecorderToAppProtocol {
     }
 }
 
+final class BrowserHandler: BrowserToAppProtocol {
+    
+    func handshake(completionHandler: () -> ()) {
+        os_log("handshake()", log: log, type: .info)
+//        BrowserCommunicator.shared.pongBrowser()
+        completionHandler()
+    }
+    
+    func browserEvent(data: [String : Any]) {
+        os_log("browserEvent() data %{public}@", log: log, type: .info, "\(data)")        
+    }
+}
+
+
 final class ViewController: NSViewController {
     
     private var subProcess: GoRewindProcess<AppToRecorderProtocol>!    
@@ -29,22 +45,7 @@ final class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        recorderProcess = GoRewindRunningProcess<AppToRecorderProtocol>(localProtocol: RecorderToAppProtocol.self, 
-//                                                                        remoteProtocol: AppToRecorderProtocol.self, 
-//                                                                        handler: recorderHandler, 
-//                                                                        remoteContextIdentifier: "recorder")
-//        
-//        recorderProcess.onHandshake = {
-//            print("fromRecorder:handshake")
-//            
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { 
-//                print("send STOP")
-//                self.recorderProcess.service?.toggleState()
-//            }
-//        }
-//        
-//        print("toRecorder:connect...")
-//        recorderProcess.connect()
+        GoRewindProcessCommunicator.setupConnection(with: .customServiceNamePrefix("xpctest"))
         
         let browserHandler = BrowserHandler()
         browserPeer = GoRewindPeer<AppToBrowserProtocol>(handler: browserHandler,
@@ -53,14 +54,21 @@ final class ViewController: NSViewController {
                                                          currentContextIdentifier: ContextIdentifiers.nativeMessagingHost)
         browserPeer.onHandshake = { service in
             print("handshake")
-            self.pongBrowser()
+
         }
         browserPeer.listen()
     }
     
     @IBAction func retrievePID(_ sender: Any) {
-        GoRewindProcessCommunicator.pid(for: ContextIdentifiers.nativeMessagingHost, with: .customServiceNamePrefix("xpctest")) { (pid) in
-            print("PID: \(pid ?? -1)")
+        GoRewindProcessCommunicator.clientPid(for: ContextIdentifiers.nativeMessagingHost, with: .customServiceNamePrefix("xpctest")) { (_pid) in
+
+            if let _pid = _pid {
+                let pid = Int32(_pid)
+                print("PID to kill: \(pid)")
+                kill(pid, SIGTERM)
+            } else {
+                print("No PID registered.")
+            }
         }
     }
     
