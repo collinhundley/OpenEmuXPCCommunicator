@@ -27,6 +27,13 @@
 #import "OEXPCCMatchMaker.h"
 #import <os/log.h>
 
+@interface OEXPCCMatchMakerClient: NSObject
++ (instancetype)matchMakerClientWithPid:(int)pid handler:(void (^)(NSXPCListenerEndpoint *))handler;
+@property(readonly) int pid;
+@property(readonly, copy) void(^handler)(NSXPCListenerEndpoint *endpoint);
+@end
+
+
 @interface OEXPCCMatchMakerListener : NSObject
 + (instancetype)matchMakerListenerWithEndpoint:(NSXPCListenerEndpoint *)endpoint handler:(void(^)(BOOL success))handler;
 @property(readonly) NSXPCListenerEndpoint *endpoint;
@@ -79,35 +86,54 @@
     return YES;
 }
 
+- (void)retrievePidForIdentifier:(nonnull NSString *)identifier completionHandler:(void(^)(int pid))handler
+{
+    dispatch_async(_listenerQueue, ^{
+        os_log(OS_LOG_DEFAULT, "retrievePid for identifier: %{public}@...", identifier);
+        os_log(OS_LOG_DEFAULT, "_pendingClients: %{public}@", [_pendingClients allKeys]);
+        
+        OEXPCCMatchMakerClient *client = _pendingClients[identifier];
+        
+        if(client == nil)
+        {
+            handler(-1);
+            return;
+        }
+        
+        os_log(OS_LOG_DEFAULT, "returning pid: %{public}d...", [client pid]);
+        handler([client pid]);
+    });
+}
+
 - (void)registerListenerEndpoint:(NSXPCListenerEndpoint *)endpoint forIdentifier:(NSString *)identifier completionHandler:(void (^)(BOOL))handler
 {
     dispatch_async(_listenerQueue, ^{
         os_log(OS_LOG_DEFAULT, "Registering endpoint with identifier: %{public}@...", identifier);
         os_log(OS_LOG_DEFAULT, "_pendingClients: %{public}@", [_pendingClients allKeys]);
         
-        void (^clientBlock)(NSXPCListenerEndpoint *) = _pendingClients[identifier];
+        OEXPCCMatchMakerClient *client = _pendingClients[identifier];
 
         _pendingListeners[identifier] = [OEXPCCMatchMakerListener matchMakerListenerWithEndpoint:endpoint handler:handler];
 
-        if(clientBlock == nil)
+        if(client == nil)
         {
             return;
         }
 
-        clientBlock(endpoint);
+        client.handler(endpoint);
         handler(YES);
 //        [_pendingClients removeObjectForKey:identifier];
     });
 }
 
-- (void)retrieveListenerEndpointForIdentifier:(NSString *)identifier completionHandler:(void (^)(NSXPCListenerEndpoint *))handler
+- (void)retrieveListenerEndpointForIdentifier:(NSString *)identifier ownPid:(int)pid completionHandler:(void (^)(NSXPCListenerEndpoint *))handler
 {
     dispatch_async(_listenerQueue, ^{
-        os_log(OS_LOG_DEFAULT, "Retrieving endpoint for identifier: %{public}@...", identifier);
+        os_log(OS_LOG_DEFAULT, "Retrieving endpoint for identifier: %{public}@... ownPid: %{public}d", identifier, pid);
         os_log(OS_LOG_DEFAULT, "_pendingListeners: %{public}@", [_pendingListeners allKeys]);
         
         OEXPCCMatchMakerListener *listener = _pendingListeners[identifier];
-        _pendingClients[identifier] = [handler copy];
+        _pendingClients[identifier] = [OEXPCCMatchMakerClient matchMakerClientWithPid:pid handler:handler];
 
         if(listener == nil)
         {
@@ -133,4 +159,14 @@
     return listener;
 }
 
+@end
+
+@implementation OEXPCCMatchMakerClient
++ (instancetype)matchMakerClientWithPid:(int)pid handler:(void (^)(NSXPCListenerEndpoint *))handler
+{
+    OEXPCCMatchMakerClient *client = [[OEXPCCMatchMakerClient alloc] init];
+    client->_pid = pid;
+    client->_handler = [handler copy];
+    return client;
+}
 @end

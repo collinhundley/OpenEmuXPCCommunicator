@@ -95,14 +95,19 @@
     return self;
 }
 
+- (void)retrievePidForIdentifier:(nonnull NSString *)identifier completionHandler:(void(^)(int pid))handler
+{
+    [_remoteObjectProxy retrievePidForIdentifier:identifier completionHandler:handler];
+}
+
 - (void)registerListenerEndpoint:(NSXPCListenerEndpoint *)endpoint forIdentifier:(NSString *)identifier completionHandler:(void (^)(BOOL))handler
 {
     [_remoteObjectProxy registerListenerEndpoint:endpoint forIdentifier:identifier completionHandler:handler];
 }
 
-- (void)retrieveListenerEndpointForIdentifier:(NSString *)identifier completionHandler:(void (^)(NSXPCListenerEndpoint *))handler
+- (void)retrieveListenerEndpointForIdentifier:(NSString *)identifier ownPid:(int)pid completionHandler:(void (^)(NSXPCListenerEndpoint *))handler
 {
-    [_remoteObjectProxy retrieveListenerEndpointForIdentifier:identifier completionHandler:handler];
+    [_remoteObjectProxy retrieveListenerEndpointForIdentifier:identifier ownPid:pid completionHandler:handler];
 }
 
 @end

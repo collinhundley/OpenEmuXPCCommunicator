@@ -24,6 +24,7 @@ final class ViewController: NSViewController {
     private var subProcess: GoRewindProcess<AppToRecorderProtocol>!    
 //    private var recorderProcess: GoRewindRunningProcess<AppToRecorderProtocol>!
     private let recorderHandler = RecorderHandler()
+    private var browserPeer: GoRewindPeer<AppToBrowserProtocol>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,23 @@ final class ViewController: NSViewController {
 //        
 //        print("toRecorder:connect...")
 //        recorderProcess.connect()
+        
+        let browserHandler = BrowserHandler()
+        browserPeer = GoRewindPeer<AppToBrowserProtocol>(handler: browserHandler,
+                                                         localProtocol: BrowserToAppProtocol.self,
+                                                         remoteProtocol: AppToBrowserProtocol.self,
+                                                         currentContextIdentifier: ContextIdentifiers.nativeMessagingHost)
+        browserPeer.onHandshake = { service in
+            print("handshake")
+            self.pongBrowser()
+        }
+        browserPeer.listen()
+    }
+    
+    @IBAction func retrievePID(_ sender: Any) {
+        GoRewindProcessCommunicator.pid(for: ContextIdentifiers.nativeMessagingHost, with: .customServiceNamePrefix("xpctest")) { (pid) in
+            print("PID: \(pid ?? -1)")
+        }
     }
     
     @IBAction func startSubprocess(_ sender: Any) {        

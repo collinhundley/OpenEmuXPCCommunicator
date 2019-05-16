@@ -40,7 +40,8 @@
 
 @property(readonly) NSString *serviceName;
 
+- (void)retrievePidForIdentifier:(nonnull NSString *)identifier completionHandler:(void(^)(int pid))handler;
 - (void)registerListenerEndpoint:(NSXPCListenerEndpoint *)endpoint forIdentifier:(NSString *)identifier completionHandler:(void(^)(BOOL success))handler;
-- (void)retrieveListenerEndpointForIdentifier:(NSString *)identifier completionHandler:(void(^)(NSXPCListenerEndpoint *endpoint))handler;
+- (void)retrieveListenerEndpointForIdentifier:(NSString *)identifier ownPid:(int)pid completionHandler:(void(^)(NSXPCListenerEndpoint *endpoint))handler;
 
 @end
