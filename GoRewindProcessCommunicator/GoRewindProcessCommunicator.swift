@@ -44,7 +44,7 @@ public class GoRewindProcessCommunicator {
         return nil
     }
     
-    public static func setupConnection(with param: LaunchParam, launchAgentFrom applicationSupportDirectory: URL? = nil) {
+    public static func setupConnection(with param: LaunchParam, launchAgentFrom applicationSupportDirectory: URL? = nil, agentErrorHandler: ((Error?) -> Void)? = nil) {
         switch param {
         case .debug:
             GoRewindProcessConstants.serviceNamePrefix = "dev."
@@ -62,7 +62,7 @@ public class GoRewindProcessCommunicator {
             OEXPCCAgentConfiguration.defaultConfiguration(withName: GoRewindProcessConstants.serviceName(), applicationSupportDirectory: applicationSupportDirectory)
         }
         
-        OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName())
+        OEXPCCAgent.defaultAgent(withServiceName: GoRewindProcessConstants.fullServiceName(), errorHandler: agentErrorHandler)
         
         os_log("SetupConnection. fullServiceName: %{public}@. Start agent? %{public}@", 
                log: OSLog.xpc, 

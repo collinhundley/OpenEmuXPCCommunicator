@@ -54,7 +54,7 @@
     return [self OEXPCC_serviceNameFromArguments] != nil && [self defaultProcessIdentifier] != nil;
 }
 
-+ (OEXPCCAgent *)defaultAgentWithServiceName:(nullable NSString *)name
++ (OEXPCCAgent *)defaultAgentWithServiceName:(nullable NSString *)name errorHandler:(void (^_Nullable)(NSError *error))errorHandler
 {
     static OEXPCCAgent *defaultAgent = nil;
     static dispatch_once_t onceToken;
@@ -63,7 +63,7 @@
         if(serviceName == nil) {
             serviceName = [self OEXPCC_serviceNameFromArguments] ? : [self OEXPCC_serviceNameFromDefaultConfiguration];
         }
-        defaultAgent = [[OEXPCCAgent alloc] initWithServiceName:serviceName];
+        defaultAgent = [[OEXPCCAgent alloc] initWithServiceName:serviceName errorHandler:errorHandler];
     });
 
     return defaultAgent;
@@ -78,7 +78,7 @@
     return nil;
 }
 
-- (id)initWithServiceName:(NSString *)serviceName
+- (id)initWithServiceName:(NSString *)serviceName errorHandler:(void (^_Nullable)(NSError *error))errorHandler
 {
     if((self = [super init]))
     {
@@ -90,7 +90,7 @@
         [_agentConnection setRemoteObjectInterface:[NSXPCInterface interfaceWithProtocol:@protocol(OEXPCCMatchMaking)]];
         [_agentConnection resume];
 
-        _remoteObjectProxy = [_agentConnection remoteObjectProxy];
+        _remoteObjectProxy = [_agentConnection remoteObjectProxyWithErrorHandler:errorHandler];
     }
     return self;
 }

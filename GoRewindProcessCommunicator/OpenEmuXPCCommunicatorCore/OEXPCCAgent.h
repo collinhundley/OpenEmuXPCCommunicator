@@ -31,12 +31,12 @@
 + (BOOL)canParseProcessArgumentsForDefaultAgent;
 
 // Get the agent based on the process arguments or the +[OEXPCCAgentConfiguration sharedConfiguration] if set up.
-+ (OEXPCCAgent *)defaultAgentWithServiceName:(nullable NSString *)name;
++ (OEXPCCAgent *)defaultAgentWithServiceName:(nullable NSString *)name errorHandler:(void (^_Nullable)(NSError *error))errorHandler;
 
 // Extract the process identifier from the arguments, returns nil if it can't be found.
 + (NSString *)defaultProcessIdentifier;
 
-- (id)initWithServiceName:(NSString *)serviceName;
+- (id)initWithServiceName:(NSString *)serviceName errorHandler:(void (^_Nullable)(NSError *error))errorHandler;
 
 @property(readonly) NSString *serviceName;
 

@@ -28,8 +28,12 @@ final class MainAppHandler: AppToRecorderProtocol {
 let mainAppHandler = MainAppHandler()
 var peer: GoRewindPeer<RecorderToAppProtocol>!
 var service: RecorderToAppProtocol?
+let currentRunLoop = CFRunLoopGetCurrent()
 
-GoRewindProcessCommunicator.setupConnection(with: .customServiceNamePrefix("xpctest"))
+GoRewindProcessCommunicator.setupConnection(with: .customServiceNamePrefix("xpctest")) { error in
+    print("Can't connect to agent. Exiting...")
+    CFRunLoopStop(currentRunLoop)
+}
 
 peer = GoRewindPeer<RecorderToAppProtocol>(handler: mainAppHandler, 
                                            localProtocol: AppToRecorderProtocol.self, 

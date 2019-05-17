@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9E203CC1226A86D30061E557 /* OpenEmuXPCCommunicatorAgent in CopyFiles */ = {isa = PBXBuildFile; fileRef = "Rewind-OpenEmuXPCCommunicator::OpenEmuXPCCommunicatorAgent::Product" /* OpenEmuXPCCommunicatorAgent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9E49D878228E315D00A260E5 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E93C2A722837EDF00E291F9 /* Shared.swift */; };
+		9E49D879228E317E00A260E5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E93C2AF2283851700E291F9 /* main.swift */; };
 		9E63EF8E226A0ECA0016174A /* OEXPCCAgentConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* OEXPCCAgentConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E63EF8F226A0ECD0016174A /* OEXPCCAgentConfiguration_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* OEXPCCAgentConfiguration_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E63EF90226A0ECF0016174A /* GoRewindProcessCommunicator.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* GoRewindProcessCommunicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,8 +20,6 @@
 		9E93C2A222837E3F00E291F9 /* GoRewindProcessCommunicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator::Product" /* GoRewindProcessCommunicator.framework */; };
 		9E93C2A322837E3F00E291F9 /* GoRewindProcessCommunicator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "Rewind-OpenEmuXPCCommunicator::GoRewindProcessCommunicator::Product" /* GoRewindProcessCommunicator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E93C2A822837EDF00E291F9 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E93C2A722837EDF00E291F9 /* Shared.swift */; };
-		9E93C2B02283851700E291F9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E93C2AF2283851700E291F9 /* main.swift */; };
-		9E93C2B622838BEB00E291F9 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E93C2A722837EDF00E291F9 /* Shared.swift */; };
 		9ECA6665226A080500283E0B /* OEXPCCAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* OEXPCCAgent.m */; };
 		9ECA6666226A080C00283E0B /* OEXPCCAgentConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* OEXPCCAgentConfiguration.m */; };
 		9ECA66A7226A0DD400283E0B /* OEXPCCAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* OEXPCCAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -93,6 +93,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E49D876228E259E00A260E5 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = XPCTestNMH/main.swift; sourceTree = SOURCE_ROOT; };
 		9E63D0442272763400C410CC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9E93C29022837DFF00E291F9 /* XPCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XPCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E93C29222837DFF00E291F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				9E93C2AF2283851700E291F9 /* main.swift */,
+				9E49D876228E259E00A260E5 /* main.swift */,
 			);
 			path = XPCTestSubprocess;
 			sourceTree = "<group>";
@@ -420,8 +422,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E93C2B622838BEB00E291F9 /* Shared.swift in Sources */,
-				9E93C2B02283851700E291F9 /* main.swift in Sources */,
+				9E49D878228E315D00A260E5 /* Shared.swift in Sources */,
+				9E49D879228E317E00A260E5 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
