@@ -96,7 +96,7 @@
 
         clientBlock(endpoint);
         handler(YES);
-//        [_pendingClients removeObjectForKey:identifier];
+        [_pendingClients removeObjectForKey:identifier];
     });
 }
 
@@ -117,7 +117,7 @@
         handler([listener endpoint]);
 
         [listener handler](YES);
-//        [_pendingListeners removeObjectForKey:identifier];
+        [_pendingListeners removeObjectForKey:identifier];
     });
 }
 
