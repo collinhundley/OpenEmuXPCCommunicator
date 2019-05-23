@@ -48,4 +48,8 @@ peer.onParentProcessTermination = {
 }
 peer.listen()
 
+DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) { 
+    exit(0)
+}
+
 CFRunLoopRun()

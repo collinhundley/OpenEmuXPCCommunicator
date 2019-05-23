@@ -14,6 +14,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
     public var onHandshake: (() -> ())?
     public var onInterrupt: (() -> ())?
     public var onInvalidate: (() -> ())?
+    public var onLaunchFailure: (() -> ())?
     public var shouldTerminate: Bool = false
     
     private var processConnection: NSXPCConnection?
@@ -23,6 +24,9 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
     private let remoteProtocol: Protocol
     private var handler: GoRewindProcessProtocol
     private var launchUrl: URL
+    private let maxAllowedRelaunches = 5
+    private var currentLaunch = 0
+    private var lastProcessLaunch: Date?
     
     public init?(launchUrl: URL, arguments: [String] = [], localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString) {
         self.launchUrl = launchUrl
@@ -55,7 +59,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
         process?.arguments = [serviceName, processIdentifier, pidArg] + arguments
         process?.terminationHandler = { [weak self] _process in
             guard let self = self else { return }
-            if !self.shouldTerminate && _process.terminationReason == .uncaughtSignal {
+            if !self.shouldTerminate {
                 print("Subprocess \(_process.executableURL?.absoluteString ?? "[unknown]") quit unexpectedly [reason \(_process.terminationStatus)]. Trying to re-run...")
                 
                 // re-creating new `process` (An Process object can only be run once.)
@@ -66,7 +70,29 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
         }
     }
     
-    public func run() {     
+    public func run() {        
+        guard currentLaunch < maxAllowedRelaunches else {
+            os_log("Max number of relaunches (%{public}d) reached. Won't try anymore.", 
+                   log: OSLog.xpc, 
+                   type: .info, 
+                   maxAllowedRelaunches) 
+            onLaunchFailure?()
+            return
+        }
+        
+        // Don't count if the interval between launches is > 5 secs (might be a planned one?)
+        if let lastProcessLaunch = lastProcessLaunch {
+            let diff = Date().timeIntervalSince(lastProcessLaunch)
+            if diff <= 5.0 {
+                currentLaunch += 1
+            } else {
+                currentLaunch = 0
+            }
+        } else {
+            currentLaunch += 1
+        }
+        lastProcessLaunch = Date()
+        
         do {
             try self.process?.run()
         } catch {

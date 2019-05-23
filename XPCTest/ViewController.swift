@@ -63,6 +63,9 @@ final class ViewController: NSViewController {
         }
         
         print("toRecorder:connect...")
+        subProcess.onLaunchFailure = {
+            print("Failed to launch after 5 tries in the row.")
+        }
         subProcess.run()
     }
 }
