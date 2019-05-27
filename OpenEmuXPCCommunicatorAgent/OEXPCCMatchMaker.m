@@ -117,7 +117,7 @@
         handler([listener endpoint]);
 
         [listener handler](YES);
-//        [_pendingListeners removeObjectForKey:identifier];
+        [_pendingListeners removeObjectForKey:identifier];
     });
 }
 
