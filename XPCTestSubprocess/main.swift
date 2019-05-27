@@ -46,7 +46,9 @@ peer.onHandshake = { s in
 peer.onParentProcessTermination = {
     print("Sub:Parent terminated.")
 }
-peer.listen()
+peer.listen() { connected, contextIdentifier in
+    print("connected: \(connected), contextIdentifier: \(contextIdentifier)")
+}
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) { 
     exit(0)
