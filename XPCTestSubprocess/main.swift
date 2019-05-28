@@ -39,6 +39,9 @@ peer = GoRewindPeer<RecorderToAppProtocol>(handler: mainAppHandler,
                                            localProtocol: AppToRecorderProtocol.self, 
                                            remoteProtocol: RecorderToAppProtocol.self, 
                                            currentContextIdentifier: ContextIdentifiers.recorder)
+peer.onConnect = { contextIdentifier in
+    print("Sub:Connect: \(contextIdentifier)")
+}
 peer.onHandshake = { s in
     print("Sub:Handshake")
     service = s
@@ -46,9 +49,7 @@ peer.onHandshake = { s in
 peer.onParentProcessTermination = {
     print("Sub:Parent terminated.")
 }
-peer.listen() { connected, contextIdentifier in
-    print("connected: \(connected), contextIdentifier: \(contextIdentifier)")
-}
+peer.connect()
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) { 
     exit(0)

@@ -11,6 +11,7 @@ import os.log
 
 public class GoRewindRunningProcess<S: GoRewindProcessProtocol> {
     public var service: S?
+    public var onConnect: ((_ contextIdentifier: ContextIdentifier) -> ())?
     public var onHandshake: (() -> ())?
     public var onInterrupt: (() -> ())?
     public var onInvalidate: (() -> ())?
@@ -40,6 +41,8 @@ public class GoRewindRunningProcess<S: GoRewindProcessProtocol> {
                     print("Endpoint `\(endpoint.debugDescription)` is not available.")
                     return
             }
+            
+            self.onConnect?(self.remoteContextIdentifier)
             
             self.processConnection = NSXPCConnection(listenerEndpoint: theEndpoint)
             self.processConnection?.remoteObjectInterface = NSXPCInterface(with: self.remoteProtocol)
