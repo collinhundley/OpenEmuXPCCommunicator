@@ -23,17 +23,19 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
     private let localProtocol: Protocol
     private let remoteProtocol: Protocol
     private var handler: GoRewindProcessProtocol
+    private var connectionIdentifier: String
     private var launchUrl: URL
     private let maxAllowedRelaunches = 5
     private var currentLaunch = 0
     private var lastProcessLaunch: Date?
     
-    public init?(launchUrl: URL, arguments: [String] = [], localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString) {
+    public init?(launchUrl: URL, arguments: [String] = [], localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString, connectionIdentifier: String = UUID().uuidString) {
         self.launchUrl = launchUrl
         self.remoteContextIdentifier = remoteContextIdentifier
         self.remoteProtocol = remoteProtocol
         self.localProtocol = localProtocol
         self.handler = handler
+        self.connectionIdentifier = connectionIdentifier
 
         let config = OEXPCCAgentConfiguration.current()
         
@@ -124,7 +126,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
                 print("Remote process error:", error)
                 } as? S
             
-            self.service?.handshake {
+            self.service?.handshake(connectionIdentifier: self.connectionIdentifier) {
                 self.onHandshake?()
             }
         })

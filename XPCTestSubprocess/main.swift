@@ -18,7 +18,8 @@ final class MainAppHandler: AppToRecorderProtocol {
         isRecording(true)
     }    
     
-    func handshake(completionHandler: () -> ()) {
+    func handshake(connectionIdentifier: String, completionHandler: () -> ()) {
+        print("Handshake with connectionIdentifier: \(connectionIdentifier)")
         completionHandler()
     }
 }

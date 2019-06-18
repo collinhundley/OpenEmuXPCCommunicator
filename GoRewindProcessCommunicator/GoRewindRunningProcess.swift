@@ -21,12 +21,14 @@ public class GoRewindRunningProcess<S: GoRewindProcessProtocol> {
     private let localProtocol: Protocol
     private let remoteProtocol: Protocol
     private var handler: GoRewindProcessProtocol
+    private var connectionIdentifier: String
     
-    public init?(localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier) {
+    public init?(localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier, connectionIdentifier: String = UUID().uuidString) {
         self.remoteContextIdentifier = remoteContextIdentifier
         self.remoteProtocol = remoteProtocol
         self.localProtocol = localProtocol
         self.handler = handler
+        self.connectionIdentifier = connectionIdentifier
     }
     
     public func connect() {
@@ -56,7 +58,7 @@ public class GoRewindRunningProcess<S: GoRewindProcessProtocol> {
                 print("Remote process error:", error)
                 } as? S
             
-            self.service?.handshake {
+            self.service?.handshake(connectionIdentifier: self.connectionIdentifier) {
                 self.onHandshake?()
             }
         })
