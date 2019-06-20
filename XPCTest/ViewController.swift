@@ -13,8 +13,7 @@ final class RecorderHandler: RecorderToAppProtocol {
     func updateStatistics(frameCount: Int, CPUperHour: Int) {
         print("GOT frameCount: \(frameCount)")
     }
-    func handshake(connectionIdentifier: String, completionHandler: () -> ()) {
-        print("Handshake with connectionIdentifier: \(connectionIdentifier)")
+    func handshake(completionHandler: () -> ()) {
         completionHandler()
     }
 }

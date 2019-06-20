@@ -12,5 +12,5 @@ import Foundation
 public protocol GoRewindProcessProtocol {
     // This isn't ideal. We'd rather implement it in a Protocol Extension, but unfortunately
     // it's not possible for @objc protocols. Use nasty inheritance instead?...
-    func handshake(connectionIdentifier: String, completionHandler: @escaping () -> ())
+    func handshake(completionHandler: @escaping () -> ())
 }
