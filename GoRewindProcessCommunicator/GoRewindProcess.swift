@@ -28,7 +28,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
     private var currentLaunch = 0
     private var lastProcessLaunch: Date?
     
-    public init?(launchUrl: URL, arguments: [String] = [], localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString, stdOutErr: Any? = nil) {
+    public init?(launchUrl: URL, arguments: [String] = [], localProtocol: Protocol, remoteProtocol: Protocol, handler: GoRewindProcessProtocol, remoteContextIdentifier: ContextIdentifier = UUID().uuidString, useStdOutErr: Bool = true) {
         self.launchUrl = launchUrl
         self.remoteContextIdentifier = remoteContextIdentifier
         self.remoteProtocol = remoteProtocol
@@ -57,8 +57,10 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
         process = Process()
         process?.executableURL = launchUrl
         process?.arguments = [serviceName, processIdentifier, pidArg] + arguments
-        process?.standardOutput = stdOutErr
-        process?.standardError = stdOutErr
+        if !useStdOutErr {
+            process?.standardOutput = nil
+            process?.standardError = nil
+        }
         process?.terminationHandler = { [weak self] _process in
             guard let self = self else { return }
             if !self.shouldTerminate {
