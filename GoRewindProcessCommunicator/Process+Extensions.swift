@@ -14,6 +14,8 @@ extension Process {
         newProcess.executableURL = self.executableURL
         newProcess.arguments = self.arguments
         newProcess.terminationHandler = self.terminationHandler
+        newProcess.standardOutput = self.standardOutput
+        newProcess.standardError = self.standardError
         return newProcess
     }
 }
