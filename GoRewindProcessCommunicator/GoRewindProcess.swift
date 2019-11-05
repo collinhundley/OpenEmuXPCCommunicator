@@ -18,7 +18,7 @@ public class GoRewindProcess<S: GoRewindProcessProtocol> {
     public var shouldTerminate: Bool = false
     
     private var processConnection: NSXPCConnection?
-    private var process: Process?
+    public var process: Process?
     private let remoteContextIdentifier: ContextIdentifier
     private let localProtocol: Protocol
     private let remoteProtocol: Protocol
